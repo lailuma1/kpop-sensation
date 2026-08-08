@@ -16,15 +16,56 @@ scroll-behavior:smooth;
 }
 
 body{
-background:linear-gradient(135deg,#ffb6d9,#ff69b4,#ff1493);
+background:linear-gradient(135deg,#2d0a1a,#5a1a3a,#1a0010);
 background-size:300% 300%;
 animation:bg 10s infinite alternate;
 color:white;
+position:relative;
+overflow-x:hidden;
+cursor:crosshair;
+}
+
+body::before{
+content:'';
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:
+radial-gradient(circle at 20% 50%, rgba(255,105,180,.12) 0%, transparent 50%),
+radial-gradient(circle at 80% 50%, rgba(255,20,147,.12) 0%, transparent 50%);
+pointer-events:none;
+animation:sparkle 4s infinite;
+z-index:-1;
+}
+
+@keyframes sparkle{
+0%, 100%{opacity:.4;}
+50%{opacity:1;}
 }
 
 @keyframes bg{
 0%{background-position:left;}
 100%{background-position:right;}
+}
+
+.sparkle-particle{
+position:fixed;
+pointer-events:none;
+font-size:20px;
+animation:float 3s ease-out forwards;
+}
+
+@keyframes float{
+0%{
+opacity:1;
+transform:translateY(0) translateX(0) scale(1);
+}
+100%{
+opacity:0;
+transform:translateY(-100px) translateX(var(--tx)) scale(0);
+}
 }
 
 header{
@@ -34,29 +75,38 @@ padding:60px 20px;
 
 header h1{
 font-size:60px;
-text-shadow:0 0 20px white;
+text-shadow:0 0 20px #ff1493, 0 0 40px #ff69b4;
+color:#ff69b4;
+transition:.3s;
+}
+
+header h1:hover{
+text-shadow:0 0 30px #ff1493, 0 0 50px #ff69b4, 0 0 20px #ff105f;
 }
 
 header p{
 font-size:22px;
 margin-top:10px;
+color:#ffc0e0;
 }
 
 .back{
 display:inline-block;
 margin-top:20px;
 padding:12px 30px;
-background:white;
-color:#ff1493;
+background:rgba(255,20,147,.8);
+color:white;
 text-decoration:none;
 border-radius:30px;
 font-weight:bold;
 transition:.4s;
+box-shadow:0 0 15px rgba(255,20,147,.5);
 }
 
 .back:hover{
-background:#ffd6ec;
+background:#ff1493;
 transform:scale(1.1);
+box-shadow:0 0 30px rgba(255,20,147,.8);
 }
 
 .hero{
@@ -65,7 +115,8 @@ max-width:900px;
 margin:40px auto;
 overflow:hidden;
 border-radius:25px;
-box-shadow:0 10px 30px rgba(0,0,0,.4);
+box-shadow:0 10px 30px rgba(255,20,147,.3);
+border:2px solid rgba(255,20,147,.4);
 }
 
 .hero img{
@@ -77,15 +128,24 @@ section{
 width:90%;
 max-width:1000px;
 margin:40px auto;
-background:rgba(255,255,255,.15);
+background:rgba(255,20,147,.1);
 backdrop-filter:blur(10px);
 padding:30px;
 border-radius:20px;
+border:1px solid rgba(255,20,147,.3);
+transition:.4s;
+}
+
+section:hover{
+background:rgba(255,20,147,.15);
+box-shadow:0 0 30px rgba(255,20,147,.2);
 }
 
 h2{
 margin-bottom:15px;
 font-size:35px;
+color:#ff69b4;
+text-shadow:0 0 10px rgba(255,20,147,.6);
 }
 
 .members{
@@ -98,14 +158,18 @@ margin-top:25px;
 
 .member{
 width:220px;
-background:rgba(255,255,255,.2);
+background:rgba(255,20,147,.15);
 border-radius:20px;
 overflow:hidden;
 transition:.4s;
+border:1px solid rgba(255,105,180,.4);
+cursor:pointer;
 }
 
 .member:hover{
-transform:translateY(-10px);
+transform:translateY(-10px) scale(1.05);
+box-shadow:0 0 30px rgba(255,20,147,.4);
+background:rgba(255,20,147,.25);
 }
 
 .member img{
@@ -117,35 +181,40 @@ object-fit:cover;
 .member h3{
 padding:15px;
 text-align:center;
+color:#ff69b4;
 }
 
 .member p{
 padding:0 15px 20px;
 text-align:center;
+color:#ffc0e0;
 }
 
 .button{
 display:inline-block;
 margin-top:20px;
 padding:15px 35px;
-background:white;
-color:#ff1493;
+background:linear-gradient(135deg,#ff1493,#ff69b4);
+color:white;
 text-decoration:none;
 font-weight:bold;
 border-radius:30px;
 transition:.4s;
+box-shadow:0 0 20px rgba(255,20,147,.5);
 }
 
 .button:hover{
-background:#ffd6ec;
+background:linear-gradient(135deg,#ff69b4,#ff1493);
 transform:scale(1.08);
+box-shadow:0 0 40px rgba(255,20,147,.8);
 }
 
 footer{
 text-align:center;
 padding:30px;
 margin-top:50px;
-background:rgba(0,0,0,.2);
+background:rgba(255,20,147,.15);
+border-top:2px solid rgba(255,20,147,.4);
 }
 
 </style>
@@ -160,7 +229,7 @@ background:rgba(0,0,0,.2);
 
 <p>In Your Area!</p>
 
-<a class="back" href="myprofile.html">🏠 Back to Home</a>
+<a class="back" href="index.html">🏠 Back to Home</a>
 
 </header>
 
@@ -198,7 +267,7 @@ iconic fashion, and global hits, they have millions of fans around the world.
     </a>
 
     <h3>
-        <a href="jennie.html" style="color:white; text-decoration:none;">
+        <a href="jennie.html" style="color:#ff69b4; text-decoration:none;">
             🖤 Jennie
         </a>
     </h3>
@@ -211,7 +280,7 @@ iconic fashion, and global hits, they have millions of fans around the world.
     </a>
 
     <h3>
-        <a href="rose.html" style="color:white; text-decoration:none;">
+        <a href="rose.html" style="color:#ff69b4; text-decoration:none;">
             🌹 Rosé
         </a>
     </h3>
@@ -223,11 +292,11 @@ iconic fashion, and global hits, they have millions of fans around the world.
 <img src="lisa.jpg" alt="Lisa" class="member">
 </a>
  <h3>
-        <a href="lisa.html" style="color:white; text-decoration:none;">
+        <a href="lisa.html" style="color:#ff69b4; text-decoration:none;">
             🌹 Lisa 
         </a>
     </h3>
-      <p>Main Dancer & Lead Rapper</p>
+       <p>Main Dancer & Lead Rapper</p>
 </div>
 </section>
 
@@ -260,6 +329,38 @@ target="_blank">
 Made with 💖 for BLINKs | Glowidolish
 
 </footer>
+
+<script>
+// Interactive sparkle effect on mouse move
+document.addEventListener('mousemove', (e) => {
+  if (Math.random() > 0.95) {
+    const sparkle = document.createElement('div');
+    sparkle.className = 'sparkle-particle';
+    sparkle.textContent = '✨';
+    sparkle.style.left = e.pageX + 'px';
+    sparkle.style.top = e.pageY + 'px';
+    sparkle.style.setProperty('--tx', (Math.random() - 0.5) * 100 + 'px');
+    document.body.appendChild(sparkle);
+    
+    setTimeout(() => sparkle.remove(), 3000);
+  }
+});
+
+// Click to create sparkle burst
+document.addEventListener('click', (e) => {
+  for (let i = 0; i < 8; i++) {
+    const sparkle = document.createElement('div');
+    sparkle.className = 'sparkle-particle';
+    sparkle.textContent = '💖';
+    sparkle.style.left = e.pageX + 'px';
+    sparkle.style.top = e.pageY + 'px';
+    sparkle.style.setProperty('--tx', Math.cos(i * Math.PI / 4) * 80 + 'px');
+    document.body.appendChild(sparkle);
+    
+    setTimeout(() => sparkle.remove(), 3000);
+  }
+});
+</script>
 
 </body>
 </html>
