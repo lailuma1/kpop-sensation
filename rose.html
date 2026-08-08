@@ -7,6 +7,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<meta name="description" content="Rosé — member of BLACKPINK. A fan page with biography, gallery, facts, and links to playlists and socials.">
+
 <title>Rosé | Glowidolish</title>
 
 <style>
@@ -246,13 +248,36 @@ font-size:20px;
 
 }
 
+/* Accessibility and focus styles */
+.button:focus, .gallery img:focus, #topBtn:focus {
+  outline: 3px solid rgba(255,255,255,0.6);
+  outline-offset: 4px;
+}
+
+/* Welcome banner */
+#welcomeBanner{
+  position:fixed;
+  top:20px;
+  left:50%;
+  transform:translateX(-50%);
+  background:rgba(255,255,255,0.12);
+  color:white;
+  padding:12px 20px;
+  border-radius:999px;
+  box-shadow:0 0 20px rgba(255,255,255,0.2);
+  font-size:18px;
+  display:none;
+  z-index:9999;
+}
+#welcomeBanner.show{display:block;}
+
 </style>
 
 </head>
 
 <body>
 
-<div class="sparkles"></div>
+<div class="sparkles" aria-hidden="true"></div>
 
 <header>
 
@@ -271,9 +296,11 @@ She inspires millions with her music and kindness.
 
 </header>
 
+<main>
+
 <div class="hero">
 
-<img src="rose-banner.jpg" alt="Rosé">
+<img src="rose-banner.jpg" alt="Rosé banner photo">
 
 </div>
 
@@ -317,13 +344,13 @@ Her emotional vocals and elegant performances have earned worldwide recognition.
 
 <div class="gallery">
 
-<img src="rose1.jpg">
+<img src="rose1.jpg" alt="Rosé photo 1" tabindex="0">
 
-<img src="rose2.jpg">
+<img src="rose2.jpg" alt="Rosé photo 2" tabindex="0">
 
-<img src="rose3.jpg">
+<img src="rose3.jpg" alt="Rosé photo 3" tabindex="0">
 
-<img src="rose4.jpg">
+<img src="rose4.jpg" alt="Rosé photo 4" tabindex="0">
 
 </div>
 
@@ -416,7 +443,7 @@ Enjoy my YouTube playlist full of Rosé's songs, performances, and unforgettable
 
 href="https://youtu.be/f73laCUMUW0?si=dvXx9dinp-nGRQjN"
 
-target="_blank">
+target="_blank" rel="noopener noreferrer">
 
 🎧 Listen on YouTube
 
@@ -438,7 +465,7 @@ Subscribe to <b>Glowidolish</b> for BLACKPINK edits, K-pop facts, playlists, sho
 
 href="https://www.youtube.com/@Glowidolish"
 
-target="_blank">
+target="_blank" rel="noopener noreferrer">
 
 💜 Subscribe
 
@@ -462,6 +489,8 @@ target="_blank">
 
 </div>
 
+</main>
+
 <footer style="text-align:center;padding:40px;background:rgba(255,255,255,.12);margin-top:50px;">
 
 <h2>🌹 Rosé 🌹</h2>
@@ -481,11 +510,15 @@ Made with 💖 by Glowidolish
 </footer>
 
 <button id="topBtn" onclick="topFunction()"
-style="display:none;position:fixed;bottom:20px;right:20px;padding:15px 20px;border:none;border-radius:50%;background:white;color:#ff1493;font-size:22px;cursor:pointer;box-shadow:0 0 15px white;">
+style="display:none;position:fixed;bottom:20px;right:20px;padding:15px 20px;border:none;border-radius:50%;background:white;color:#ff1493;font-size:22px;cursor:pointer;box-shadow:0 0 15px white;"
+aria-label="Back to top">
 
 ⬆
 
 </button>
+
+<!-- Non-blocking welcome banner -->
+<div id="welcomeBanner" aria-live="polite">🌹 Welcome to Rosé's World! Enjoy exploring! 💖</div>
 
 <script>
 
@@ -541,11 +574,15 @@ behavior:"smooth"
 
 }
 
-window.onload=function(){
-
-alert("🌹 Welcome to Rosé's World! Enjoy exploring! 💖");
-
-}
+// Show a non-blocking welcome banner on load (accessible, auto-hide)
+window.addEventListener('load', function(){
+  const banner = document.getElementById('welcomeBanner');
+  if(banner){
+    banner.classList.add('show');
+    // hide after 4 seconds
+    setTimeout(()=>{ banner.classList.remove('show'); }, 4000);
+  }
+});
 
 </script>
 
