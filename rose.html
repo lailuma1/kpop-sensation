@@ -23,11 +23,13 @@ scroll-behavior:smooth;
 
 body{
 
-background:linear-gradient(-45deg,#ffb6c1,#ff69b4,#ff1493,#ff85c1,#ffd1dc);
+background:linear-gradient(-45deg,#ffe4f0,#ffc9e0,#ffb3d9,#ffa8d8,#fff0f5);
 background-size:400% 400%;
 animation:bg 15s ease infinite;
 color:white;
 overflow-x:hidden;
+position:relative;
+cursor:crosshair;
 
 }
 
@@ -37,6 +39,44 @@ overflow-x:hidden;
 50%{background-position:100% 50%;}
 100%{background-position:0% 50%;}
 
+}
+
+body::before{
+content:'';
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:
+radial-gradient(circle at 25% 40%, rgba(255,215,0,.1) 0%, transparent 50%),
+radial-gradient(circle at 75% 60%, rgba(255,200,0,.1) 0%, transparent 50%);
+pointer-events:none;
+animation:sparkle-bg 5s ease-in-out infinite;
+z-index:-1;
+}
+
+@keyframes sparkle-bg{
+0%, 100%{opacity:.5;}
+50%{opacity:1;}
+}
+
+.sparkle-particle{
+position:fixed;
+pointer-events:none;
+font-size:22px;
+animation:float-spark 3.5s ease-out forwards;
+}
+
+@keyframes float-spark{
+0%{
+opacity:1;
+transform:translateY(0) translateX(0) scale(1) rotate(0deg);
+}
+100%{
+opacity:0;
+transform:translateY(-120px) translateX(var(--tx)) scale(0) rotate(360deg);
+}
 }
 
 .sparkles{
@@ -50,15 +90,15 @@ pointer-events:none;
 
 background-image:
 
-radial-gradient(white 1px,transparent 1px),
-radial-gradient(#ffe4ec 2px,transparent 2px),
-radial-gradient(#fff0f5 2px,transparent 2px);
+radial-gradient(#ffd700 1px,transparent 1px),
+radial-gradient(#ffed4e 2px,transparent 2px),
+radial-gradient(#ffa500 1.5px,transparent 1.5px);
 
 background-size:120px 120px,200px 200px,260px 260px;
 
 animation:sparkle 10s linear infinite;
 
-opacity:.8;
+opacity:.4;
 
 }
 
@@ -84,15 +124,22 @@ padding:60px 20px;
 header h1{
 
 font-size:70px;
-text-shadow:0 0 20px white;
+text-shadow:0 0 20px #ffd700, 0 0 40px #ffed4e;
+color:#ffd700;
+transition:.3s;
 
+}
+
+header h1:hover{
+text-shadow:0 0 30px #ffed4e, 0 0 50px #ffa500;
 }
 
 header h2{
 
 font-size:30px;
 margin-top:10px;
-color:#fff0f5;
+color:#ff85c1;
+text-shadow:0 0 15px rgba(255,215,0,.5);
 
 }
 
@@ -103,6 +150,7 @@ font-size:20px;
 width:80%;
 margin:auto;
 line-height:1.8;
+color:#ff69b4;
 
 }
 
@@ -113,7 +161,8 @@ max-width:950px;
 margin:40px auto;
 border-radius:30px;
 overflow:hidden;
-box-shadow:0 0 35px rgba(255,255,255,.5);
+box-shadow:0 0 35px rgba(255,215,0,.4);
+border:2px solid rgba(255,215,0,.5);
 
 animation:float 5s ease-in-out infinite;
 
@@ -153,11 +202,12 @@ margin:45px auto;
 padding:35px;
 border-radius:25px;
 
-background:rgba(255,255,255,.15);
+background:rgba(255,215,0,.12);
 
 backdrop-filter:blur(15px);
 
-box-shadow:0 0 20px rgba(255,255,255,.4);
+box-shadow:0 0 20px rgba(255,215,0,.3);
+border:1px solid rgba(255,215,0,.3);
 
 transition:.5s;
 
@@ -166,6 +216,7 @@ transition:.5s;
 .section:hover{
 
 transform:translateY(-10px);
+box-shadow:0 0 40px rgba(255,215,0,.4);
 
 }
 
@@ -173,7 +224,8 @@ transform:translateY(-10px);
 
 font-size:40px;
 margin-bottom:20px;
-color:white;
+color:#ffd700;
+text-shadow:0 0 10px rgba(255,215,0,.5);
 
 }
 
@@ -181,6 +233,7 @@ color:white;
 
 font-size:20px;
 line-height:1.9;
+color:#ff1493;
 
 }
 
@@ -204,7 +257,8 @@ cursor:pointer;
 
 transition:.5s;
 
-box-shadow:0 0 20px rgba(255,255,255,.4);
+box-shadow:0 0 20px rgba(255,215,0,.3);
+border:2px solid rgba(255,215,0,.4);
 
 }
 
@@ -212,7 +266,7 @@ box-shadow:0 0 20px rgba(255,255,255,.4);
 
 transform:scale(1.08) rotate(-2deg);
 
-box-shadow:0 0 35px white;
+box-shadow:0 0 35px rgba(255,215,0,.6);
 
 }
 
@@ -221,19 +275,21 @@ box-shadow:0 0 35px white;
 display:inline-block;
 margin-top:25px;
 padding:15px 35px;
-background:white;
+background:linear-gradient(135deg,#ffd700,#ffed4e);
 color:#ff1493;
 font-weight:bold;
 text-decoration:none;
 border-radius:40px;
 transition:.4s;
+box-shadow:0 0 20px rgba(255,215,0,.4);
 
 }
 
 .button:hover{
 
-background:#ffd1dc;
+background:linear-gradient(135deg,#ffed4e,#ffa500);
 transform:scale(1.1);
+box-shadow:0 0 40px rgba(255,215,0,.7);
 
 }
 
@@ -241,16 +297,18 @@ transform:scale(1.1);
 
 margin-top:20px;
 padding:20px;
-background:rgba(255,255,255,.15);
+background:rgba(255,215,0,.15);
 border-radius:20px;
 text-align:center;
 font-size:20px;
+color:#ff1493;
+border:1px solid rgba(255,215,0,.3);
 
 }
 
 /* Accessibility and focus styles */
 .button:focus, .gallery img:focus, #topBtn:focus {
-  outline: 3px solid rgba(255,255,255,0.6);
+  outline: 3px solid rgba(255,215,0,0.6);
   outline-offset: 4px;
 }
 
@@ -260,14 +318,15 @@ font-size:20px;
   top:20px;
   left:50%;
   transform:translateX(-50%);
-  background:rgba(255,255,255,0.12);
-  color:white;
+  background:rgba(255,215,0,0.2);
+  color:#ff1493;
   padding:12px 20px;
   border-radius:999px;
-  box-shadow:0 0 20px rgba(255,255,255,0.2);
+  box-shadow:0 0 20px rgba(255,215,0,0.3);
   font-size:18px;
   display:none;
   z-index:9999;
+  border:1px solid rgba(255,215,0,0.4);
 }
 #welcomeBanner.show{display:block;}
 
@@ -322,7 +381,7 @@ Her emotional vocals and elegant performances have earned worldwide recognition.
 
 <h2>🏆 Career Highlights</h2>
 
-<ul style="font-size:20px;line-height:2;">
+<ul style="font-size:20px;line-height:2;color:#ff1493;">
 
 <li>🌹 Member of BLACKPINK.</li>
 
@@ -355,6 +414,7 @@ Her emotional vocals and elegant performances have earned worldwide recognition.
 </div>
 
 </div>
+
 <div class="section">
 
 <h2>💎 Fashion Icon</h2>
@@ -389,7 +449,7 @@ in K-pop.
 
 <h2>💖 Why Fans Love Rosé</h2>
 
-<ul style="font-size:20px;line-height:2;">
+<ul style="font-size:20px;line-height:2;color:#ff1493;">
 
 <li>🌹 Angelic vocals</li>
 
@@ -433,7 +493,7 @@ Click the button below to learn a fun fact about Rosé!
 
 <h2>🎵 Stream My Rosé Playlist</h2>
 
-<p>
+<p style="color:#ff1493;">
 
 Enjoy my YouTube playlist full of Rosé's songs, performances, and unforgettable moments! 💖
 
@@ -455,7 +515,7 @@ target="_blank" rel="noopener noreferrer">
 
 <h2>💜 Support Glowidolish</h2>
 
-<p>
+<p style="color:#ff1493;">
 
 Subscribe to <b>Glowidolish</b> for BLACKPINK edits, K-pop facts, playlists, shorts, and much more!
 
@@ -481,7 +541,7 @@ target="_blank" rel="noopener noreferrer">
 
 <br><br>
 
-<a class="button" href="myprofile.html">
+<a class="button" href="index.html">
 
 🏠 Home
 
@@ -491,17 +551,17 @@ target="_blank" rel="noopener noreferrer">
 
 </main>
 
-<footer style="text-align:center;padding:40px;background:rgba(255,255,255,.12);margin-top:50px;">
+<footer style="text-align:center;padding:40px;background:rgba(255,215,0,.12);margin-top:50px;border-top:2px solid rgba(255,215,0,.3);">
 
-<h2>🌹 Rosé 🌹</h2>
+<h2 style="color:#ffd700;text-shadow:0 0 10px rgba(255,215,0,.5);">🌹 Rosé 🌹</h2>
 
-<p style="margin-top:15px;font-size:20px;">
+<p style="margin-top:15px;font-size:20px;color:#ff1493;">
 
 "Music speaks where words cannot."
 
 </p>
 
-<p style="margin-top:20px;">
+<p style="margin-top:20px;color:#ff1493;">
 
 Made with 💖 by Glowidolish
 
@@ -510,7 +570,7 @@ Made with 💖 by Glowidolish
 </footer>
 
 <button id="topBtn" onclick="topFunction()"
-style="display:none;position:fixed;bottom:20px;right:20px;padding:15px 20px;border:none;border-radius:50%;background:white;color:#ff1493;font-size:22px;cursor:pointer;box-shadow:0 0 15px white;"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:15px 20px;border:none;border-radius:50%;background:#ffd700;color:#ff1493;font-size:22px;cursor:pointer;box-shadow:0 0 20px rgba(255,215,0,.6);"
 aria-label="Back to top">
 
 ⬆
@@ -581,6 +641,36 @@ window.addEventListener('load', function(){
     banner.classList.add('show');
     // hide after 4 seconds
     setTimeout(()=>{ banner.classList.remove('show'); }, 4000);
+  }
+});
+
+// Interactive sparkle effect on mouse move
+document.addEventListener('mousemove', (e) => {
+  if (Math.random() > 0.93) {
+    const sparkle = document.createElement('div');
+    sparkle.className = 'sparkle-particle';
+    sparkle.textContent = '✨';
+    sparkle.style.left = e.pageX + 'px';
+    sparkle.style.top = e.pageY + 'px';
+    sparkle.style.setProperty('--tx', (Math.random() - 0.5) * 80 + 'px');
+    document.body.appendChild(sparkle);
+    
+    setTimeout(() => sparkle.remove(), 3500);
+  }
+});
+
+// Click to create sparkle burst
+document.addEventListener('click', (e) => {
+  for (let i = 0; i < 10; i++) {
+    const sparkle = document.createElement('div');
+    sparkle.className = 'sparkle-particle';
+    sparkle.textContent = '⭐';
+    sparkle.style.left = e.pageX + 'px';
+    sparkle.style.top = e.pageY + 'px';
+    sparkle.style.setProperty('--tx', Math.cos(i * Math.PI / 5) * 100 + 'px');
+    document.body.appendChild(sparkle);
+    
+    setTimeout(() => sparkle.remove(), 3500);
   }
 });
 
