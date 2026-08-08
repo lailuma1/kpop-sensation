@@ -19,11 +19,13 @@ scroll-behavior:smooth;
 }
 
 body{
-background:linear-gradient(-45deg,#2e004f,#4b0082,#6a0dad,#8a2be2,#c084fc);
+background:linear-gradient(-45deg,#1a0d2e,#330d5c,#4d0d8a,#5c1a99,#3d0066);
 background-size:400% 400%;
 animation:gradient 15s ease infinite;
 color:white;
 overflow-x:hidden;
+position:relative;
+cursor:crosshair;
 }
 
 @keyframes gradient{
@@ -34,6 +36,44 @@ overflow-x:hidden;
 
 }
 
+body::before{
+content:'';
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:
+radial-gradient(circle at 25% 40%, rgba(255,215,0,.1) 0%, transparent 50%),
+radial-gradient(circle at 75% 60%, rgba(255,200,0,.1) 0%, transparent 50%);
+pointer-events:none;
+animation:sparkle-bg 5s ease-in-out infinite;
+z-index:-1;
+}
+
+@keyframes sparkle-bg{
+0%, 100%{opacity:.5;}
+50%{opacity:1;}
+}
+
+.sparkle-particle{
+position:fixed;
+pointer-events:none;
+font-size:22px;
+animation:float-spark 3.5s ease-out forwards;
+}
+
+@keyframes float-spark{
+0%{
+opacity:1;
+transform:translateY(0) translateX(0) scale(1) rotate(0deg);
+}
+100%{
+opacity:0;
+transform:translateY(-120px) translateX(var(--tx)) scale(0) rotate(360deg);
+}
+}
+
 .stars{
 position:fixed;
 width:100%;
@@ -42,18 +82,18 @@ top:0;
 left:0;
 pointer-events:none;
 background-image:
-radial-gradient(white 1px, transparent 1px),
-radial-gradient(#ffd6ff 2px, transparent 2px),
-radial-gradient(#ffffff 1.5px, transparent 1.5px);
+radial-gradient(#ffd700 1px, transparent 1px),
+radial-gradient(#ffed4e 2px, transparent 2px),
+radial-gradient(#ffa500 1.5px, transparent 1.5px);
 background-size:120px 120px,180px 180px,250px 250px;
 animation:twinkle 6s linear infinite;
-opacity:.8;
+opacity:.5;
 }
 
 @keyframes twinkle{
 
 0%{transform:translateY(0);}
-50%{opacity:1;}
+50%{opacity:.7;}
 100%{transform:translateY(-40px);}
 
 }
@@ -68,15 +108,22 @@ padding:60px 20px;
 header h1{
 
 font-size:70px;
-text-shadow:0 0 25px #fff;
+text-shadow:0 0 25px #ffd700, 0 0 50px #ffed4e;
+color:#ffd700;
+transition:.3s;
 
+}
+
+header h1:hover{
+text-shadow:0 0 35px #ffed4e, 0 0 60px #ffa500, 0 0 20px #ff8c00;
 }
 
 header h2{
 
 font-size:28px;
 margin-top:15px;
-color:#ffd6ff;
+color:#e6ccff;
+text-shadow:0 0 15px rgba(255,215,0,.6);
 
 }
 
@@ -88,6 +135,7 @@ width:80%;
 margin-left:auto;
 margin-right:auto;
 line-height:1.8;
+color:#e6d9ff;
 
 }
 
@@ -98,7 +146,8 @@ max-width:950px;
 margin:40px auto;
 overflow:hidden;
 border-radius:30px;
-box-shadow:0 0 30px rgba(255,255,255,.4);
+box-shadow:0 0 30px rgba(255,215,0,.4);
+border:2px solid rgba(255,215,0,.5);
 
 }
 
@@ -122,18 +171,26 @@ width:90%;
 max-width:1100px;
 margin:50px auto;
 padding:35px;
-background:rgba(255,255,255,.15);
+background:rgba(93,26,153,.2);
 backdrop-filter:blur(15px);
 border-radius:25px;
-box-shadow:0 10px 25px rgba(0,0,0,.4);
+box-shadow:0 10px 25px rgba(0,0,0,.4), 0 0 30px rgba(255,215,0,.15);
+border:1px solid rgba(255,215,0,.3);
+transition:.4s;
 
+}
+
+.section:hover{
+background:rgba(93,26,153,.3);
+box-shadow:0 10px 25px rgba(0,0,0,.4), 0 0 50px rgba(255,215,0,.25);
 }
 
 .section h2{
 
 font-size:40px;
 margin-bottom:20px;
-color:#ffe6ff;
+color:#ffd700;
+text-shadow:0 0 10px rgba(255,215,0,.6);
 
 }
 
@@ -141,6 +198,7 @@ color:#ffe6ff;
 
 font-size:20px;
 line-height:1.9;
+color:#e6d9ff;
 
 }
 
@@ -161,13 +219,15 @@ height:340px;
 object-fit:cover;
 border-radius:20px;
 transition:.5s;
-box-shadow:0 0 20px rgba(255,255,255,.3);
+box-shadow:0 0 20px rgba(255,215,0,.3);
+border:2px solid rgba(255,215,0,.4);
 
 }
 
 .gallery img:hover{
 
 transform:scale(1.08) rotate(2deg);
+box-shadow:0 0 40px rgba(255,215,0,.5);
 
 }
 
@@ -176,6 +236,7 @@ ul{
 padding-left:30px;
 line-height:2;
 font-size:20px;
+color:#e6d9ff;
 
 }
 
@@ -184,20 +245,40 @@ font-size:20px;
 display:inline-block;
 margin-top:30px;
 padding:15px 35px;
-background:white;
-color:#6a0dad;
+background:linear-gradient(135deg,#ffd700,#ffed4e);
+color:#1a0d2e;
 font-weight:bold;
 text-decoration:none;
 border-radius:40px;
 transition:.4s;
+box-shadow:0 0 20px rgba(255,215,0,.5);
 
 }
 
 .button:hover{
 
-background:#f8d8ff;
+background:linear-gradient(135deg,#ffed4e,#ffa500);
 transform:scale(1.1);
+box-shadow:0 0 40px rgba(255,215,0,.8);
 
+}
+
+footer{
+text-align:center;
+padding:40px;
+background:rgba(93,26,153,.2);
+margin-top:50px;
+border-top:2px solid rgba(255,215,0,.4);
+}
+
+footer h2{
+color:#ffd700;
+text-shadow:0 0 10px rgba(255,215,0,.5);
+}
+
+footer p{
+color:#e6d9ff;
+margin-top:15px;
 }
 
 </style>
@@ -205,6 +286,8 @@ transform:scale(1.1);
 </head>
 
 <body>
+
+<div class="stars"></div>
 
 <script>
 const music = document.getElementById("bgmusic");
@@ -217,6 +300,36 @@ document.body.addEventListener("click", async () => {
         console.error(e);
     }
 }, { once: true });
+
+// Interactive sparkle effect on mouse move
+document.addEventListener('mousemove', (e) => {
+  if (Math.random() > 0.93) {
+    const sparkle = document.createElement('div');
+    sparkle.className = 'sparkle-particle';
+    sparkle.textContent = '✨';
+    sparkle.style.left = e.pageX + 'px';
+    sparkle.style.top = e.pageY + 'px';
+    sparkle.style.setProperty('--tx', (Math.random() - 0.5) * 80 + 'px');
+    document.body.appendChild(sparkle);
+    
+    setTimeout(() => sparkle.remove(), 3500);
+  }
+});
+
+// Click to create sparkle burst
+document.addEventListener('click', (e) => {
+  for (let i = 0; i < 10; i++) {
+    const sparkle = document.createElement('div');
+    sparkle.className = 'sparkle-particle';
+    sparkle.textContent = '⭐';
+    sparkle.style.left = e.pageX + 'px';
+    sparkle.style.top = e.pageY + 'px';
+    sparkle.style.setProperty('--tx', Math.cos(i * Math.PI / 5) * 100 + 'px');
+    document.body.appendChild(sparkle);
+    
+    setTimeout(() => sparkle.remove(), 3500);
+  }
+});
 </script>
 
 <header>
@@ -293,6 +406,7 @@ Besides music, she has built a successful acting and fashion career and is known
 </div>
 
 </div>
+
 <div class="section">
 
 <h2>✨ Fun Facts</h2>
@@ -326,6 +440,7 @@ She is admired for her elegant style, confidence, and timeless beauty, making he
 
 </p>
 
+</div>
 
 <div class="section">
 
@@ -377,13 +492,14 @@ Subscribe for BLACKPINK edits, Jisoo updates, K-pop news, facts, shorts, and muc
 
 <br><br>
 
-<a class="button" href="myprofile.html">
+<a class="button" href="index.html">
 
 🏠 Home
 
 </a>
 
 </div>
+
 <div class="section" style="text-align:center;">
 
 <h2>💜 Stream Jisoo's Music</h2>
@@ -402,13 +518,15 @@ target="_blank">
 
 </div>
 
-<footer style="text-align:center;padding:40px;background:rgba(0,0,0,.25);margin-top:50px;">
+<footer>
 
 <h2>👑 Kim Jisoo 👑</h2>
 
 <p style="margin-top:15px;font-size:18px;">
 
 "Beauty, elegance, talent, and kindness all in one person."
+
+</p>
 
 <p style="margin-top:20px;">
 
