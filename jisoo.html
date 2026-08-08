@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Kim Jisoo | Glowidolish</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,Helvetica,sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:linear-gradient(-45deg,#2e004f,#4b0082,#6a0dad,#8a2be2,#c084fc);
+background-size:400% 400%;
+animation:gradient 15s ease infinite;
+color:white;
+overflow-x:hidden;
+}
+
+@keyframes gradient{
+
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+
+}
+
+.stars{
+position:fixed;
+width:100%;
+height:100%;
+top:0;
+left:0;
+pointer-events:none;
+background-image:
+radial-gradient(white 1px, transparent 1px),
+radial-gradient(#ffd6ff 2px, transparent 2px),
+radial-gradient(#ffffff 1.5px, transparent 1.5px);
+background-size:120px 120px,180px 180px,250px 250px;
+animation:twinkle 6s linear infinite;
+opacity:.8;
+}
+
+@keyframes twinkle{
+
+0%{transform:translateY(0);}
+50%{opacity:1;}
+100%{transform:translateY(-40px);}
+
+}
+
+header{
+
+text-align:center;
+padding:60px 20px;
+
+}
+
+header h1{
+
+font-size:70px;
+text-shadow:0 0 25px #fff;
+
+}
+
+header h2{
+
+font-size:28px;
+margin-top:15px;
+color:#ffd6ff;
+
+}
+
+header p{
+
+margin-top:20px;
+font-size:20px;
+width:80%;
+margin-left:auto;
+margin-right:auto;
+line-height:1.8;
+
+}
+
+.hero{
+
+width:90%;
+max-width:950px;
+margin:40px auto;
+overflow:hidden;
+border-radius:30px;
+box-shadow:0 0 30px rgba(255,255,255,.4);
+
+}
+
+.hero img{
+
+width:100%;
+display:block;
+transition:.6s;
+
+}
+
+.hero img:hover{
+
+transform:scale(1.05);
+
+}
+
+.section{
+
+width:90%;
+max-width:1100px;
+margin:50px auto;
+padding:35px;
+background:rgba(255,255,255,.15);
+backdrop-filter:blur(15px);
+border-radius:25px;
+box-shadow:0 10px 25px rgba(0,0,0,.4);
+
+}
+
+.section h2{
+
+font-size:40px;
+margin-bottom:20px;
+color:#ffe6ff;
+
+}
+
+.section p{
+
+font-size:20px;
+line-height:1.9;
+
+}
+
+.gallery{
+
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:25px;
+margin-top:30px;
+
+}
+
+.gallery img{
+
+width:250px;
+height:340px;
+object-fit:cover;
+border-radius:20px;
+transition:.5s;
+box-shadow:0 0 20px rgba(255,255,255,.3);
+
+}
+
+.gallery img:hover{
+
+transform:scale(1.08) rotate(2deg);
+
+}
+
+ul{
+
+padding-left:30px;
+line-height:2;
+font-size:20px;
+
+}
+
+.button{
+
+display:inline-block;
+margin-top:30px;
+padding:15px 35px;
+background:white;
+color:#6a0dad;
+font-weight:bold;
+text-decoration:none;
+border-radius:40px;
+transition:.4s;
+
+}
+
+.button:hover{
+
+background:#f8d8ff;
+transform:scale(1.1);
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<script>
+const music = document.getElementById("bgmusic");
+
+document.body.addEventListener("click", async () => {
+    try {
+        await music.play();
+        console.log("Music started!");
+    } catch (e) {
+        console.error(e);
+    }
+}, { once: true });
+</script>
+
+<header>
+
+<h1>👑 Kim Jisoo 👑</h1>
+
+<h2>Miss Korea of K-pop 💜</h2>
+
+<p>
+Kim Jisoo is a South Korean singer, actress, performer, and member of BLACKPINK.
+She is admired for her elegant visuals, charming personality, and graceful stage presence.
+Fans around the world often call her <b>"Miss Korea of K-pop"</b>, a popular fan nickname that reflects her beauty and elegance.
+</p>
+
+</header>
+
+<div class="hero">
+
+<img src="jisoo-banner.jpg" alt="Kim Jisoo">
+
+</div>
+
+<div class="section">
+
+<h2>🌸 About Jisoo</h2>
+
+<p>
+
+Born on <b>January 3, 1995</b>, Kim Jisoo debuted with BLACKPINK in 2016 under YG Entertainment.
+Besides music, she has built a successful acting and fashion career and is known for her confidence, kindness, professionalism, and timeless style.
+
+</p>
+
+</div>
+
+<div class="section">
+
+<h2>🏆 Achievements</h2>
+
+<ul>
+
+<li>💜 Member of BLACKPINK, one of the world's biggest girl groups.</li>
+
+<li>🌸 Released her successful solo debut album <b>ME</b>.</li>
+
+<li>🎵 "FLOWER" became an international hit.</li>
+
+<li>🎬 Starred as the lead actress in <b>Snowdrop</b>.</li>
+
+<li>👑 Global ambassador for luxury fashion and beauty brands.</li>
+
+<li>🏆 Winner of multiple music awards with BLACKPINK and as a solo artist.</li>
+
+<li>🌍 One of the most influential Korean celebrities worldwide.</li>
+
+</ul>
+
+</div>
+
+<div class="section">
+
+<h2>📸 Gallery</h2>
+
+<div class="gallery">
+
+<img src="jisoo1.jpg">
+
+<img src="jisoo2.jpg">
+
+<img src="jisoo3.jpg">
+
+<img src="jisoo4.jpg">
+
+</div>
+
+</div>
+<div class="section">
+
+<h2>✨ Fun Facts</h2>
+
+<ul>
+
+<li>💜 Fans love calling her "Miss Korea of K-pop" because of her elegant visuals.</li>
+
+<li>🐢 Her nickname is <b>Turtle Rabbit Kim (Turtle Rabbit Kim)</b>.</li>
+
+<li>🎭 She enjoys acting, photography, and spending time with her members.</li>
+
+<li>😂 Known for her funny personality and unique sense of humor.</li>
+
+<li>🌸 Loves flowers and beautiful scenery.</li>
+
+<li>💖 Famous for her warm smile and caring personality.</li>
+
+</ul>
+
+</div>
+
+<div class="section">
+
+<h2>👑 Fashion & Luxury</h2>
+
+<p>
+
+Jisoo has become a global fashion icon through her work with luxury brands and appearances at international fashion events.
+She is admired for her elegant style, confidence, and timeless beauty, making her one of the most recognized faces in fashion.
+
+</p>
+
+
+<div class="section">
+
+<h2>⭐ Why Fans Love Jisoo</h2>
+
+<p>
+
+💜 Beautiful visuals<br><br>
+
+🌸 Amazing vocals<br><br>
+
+😂 Funny personality<br><br>
+
+👑 Incredible fashion sense<br><br>
+
+🎭 Talented actress<br><br>
+
+💎 Elegant stage presence<br><br>
+
+❤️ Kind-hearted and humble
+
+</p>
+
+</div>
+
+<div class="section" style="text-align:center;">
+
+<h2>💖 Support Glowidolish</h2>
+
+<p>
+
+Subscribe for BLACKPINK edits, Jisoo updates, K-pop news, facts, shorts, and much more!
+
+</p>
+
+<a class="button" href="https://www.youtube.com/@Glowidolish" target="_blank">
+
+💜 Subscribe Now
+
+</a>
+
+<br><br>
+
+<a class="button" href="blackpink.html">
+
+⬅ Back to BLACKPINK
+
+</a>
+
+<br><br>
+
+<a class="button" href="myprofile.html">
+
+🏠 Home
+
+</a>
+
+</div>
+<div class="section" style="text-align:center;">
+
+<h2>💜 Stream Jisoo's Music</h2>
+
+<p>
+Click below to listen to my carefully curated Jisoo playlist on YouTube! 🌸
+</p>
+
+<a class="button"
+href="https://youtu.be/cJ-KtgbuId0?si=dCejkxVNg4V_IDEp"
+target="_blank">
+
+🎶 Listen on YouTube
+
+</a>
+
+</div>
+
+<footer style="text-align:center;padding:40px;background:rgba(0,0,0,.25);margin-top:50px;">
+
+<h2>👑 Kim Jisoo 👑</h2>
+
+<p style="margin-top:15px;font-size:18px;">
+
+"Beauty, elegance, talent, and kindness all in one person."
+
+<p style="margin-top:20px;">
+
+Made with 💜 by Glowidolish
+
+</p>
+
+</footer>
+
+</body>
+</html>

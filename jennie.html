@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Jennie | Glowidolish</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,Helvetica,sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+
+background:linear-gradient(-45deg,#000000,#111111,#222222,#0a0a0a,#000000);
+background-size:400% 400%;
+animation:bg 15s ease infinite;
+color:white;
+overflow-x:hidden;
+
+}
+
+@keyframes bg{
+
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+
+}
+
+.sparkles{
+
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+pointer-events:none;
+
+background-image:
+
+radial-gradient(white 1px, transparent 1px),
+
+radial-gradient(gold 2px, transparent 2px),
+
+radial-gradient(#bbbbbb 2px, transparent 2px);
+
+background-size:120px 120px,220px 220px,300px 300px;
+
+animation:glitter 8s linear infinite;
+
+opacity:.8;
+
+}
+
+@keyframes glitter{
+
+0%{
+transform:translateY(0);
+}
+
+100%{
+transform:translateY(-80px);
+}
+
+}
+
+header{
+
+text-align:center;
+
+padding:60px 20px;
+
+}
+
+header h1{
+
+font-size:70px;
+
+color:white;
+
+text-shadow:0 0 20px gold;
+
+}
+
+header h2{
+
+margin-top:10px;
+
+color:gold;
+
+font-size:30px;
+
+}
+
+header p{
+
+margin-top:20px;
+
+font-size:20px;
+
+line-height:1.8;
+
+width:80%;
+
+margin-left:auto;
+
+margin-right:auto;
+
+}
+
+.hero{
+
+width:90%;
+
+max-width:950px;
+
+margin:40px auto;
+
+border-radius:30px;
+
+overflow:hidden;
+
+box-shadow:0 0 35px gold;
+
+}
+
+.hero img{
+
+width:100%;
+
+transition:.6s;
+
+}
+
+.hero img:hover{
+
+transform:scale(1.05);
+
+}
+
+.section{
+
+width:90%;
+
+max-width:1100px;
+
+margin:45px auto;
+
+padding:35px;
+
+border-radius:25px;
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(12px);
+
+box-shadow:0 0 25px rgba(255,215,0,.2);
+
+transition:.4s;
+
+}
+
+.section:hover{
+
+transform:translateY(-8px);
+
+}
+
+.section h2{
+
+font-size:40px;
+
+margin-bottom:20px;
+
+color:gold;
+
+}
+
+.section p{
+
+font-size:20px;
+
+line-height:1.9;
+
+}
+
+.gallery{
+
+display:flex;
+
+justify-content:center;
+
+flex-wrap:wrap;
+
+gap:25px;
+
+margin-top:25px;
+
+}
+
+.gallery img{
+
+width:250px;
+
+height:340px;
+
+object-fit:cover;
+
+border-radius:20px;
+
+transition:.5s;
+
+box-shadow:0 0 20px rgba(255,215,0,.4);
+
+cursor:pointer;
+
+}
+
+.gallery img:hover{
+
+transform:scale(1.08) rotate(2deg);
+
+box-shadow:0 0 40px gold;
+
+}
+
+.button{
+
+display:inline-block;
+
+margin-top:25px;
+
+padding:15px 35px;
+
+background:gold;
+
+color:black;
+
+font-weight:bold;
+
+text-decoration:none;
+
+border-radius:40px;
+
+transition:.4s;
+
+}
+
+.button:hover{
+
+background:white;
+
+transform:scale(1.1);
+
+}
+
+.fact{
+
+margin-top:25px;
+
+padding:20px;
+
+background:rgba(255,255,255,.1);
+
+border-radius:20px;
+
+font-size:20px;
+
+text-align:center;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="sparkles"></div>
+
+<header>
+
+<h1>🖤 Jennie Ruby Jane 🖤</h1>
+
+<h2>The Human Chanel ✨</h2>
+
+<p>
+
+Jennie Kim is a South Korean singer, rapper, performer and fashion icon.
+
+Known for her powerful charisma, confidence and luxury style,
+
+Jennie has inspired millions of fans around the world.
+
+</p>
+
+</header>
+
+<div class="hero">
+
+<img src="jennie-banner.jpg" alt="Jennie">
+
+</div>
+
+<div class="section">
+
+<h2>👑 About Jennie</h2>
+
+<p>
+
+Jennie debuted with BLACKPINK in 2016.
+
+She became the first BLACKPINK member to debut as a solo artist.
+
+Her performances, fashion, and confidence have earned her worldwide recognition.
+
+Fans often call her the <b>"Human Chanel"</b> because of her elegant luxury style.
+
+</p>
+
+</div>
+
+<div class="section">
+
+<h2>🏆 Career Highlights</h2>
+
+<ul style="font-size:20px; line-height:2;">
+
+<li>🖤 Member of BLACKPINK.</li>
+
+<li>🎤 First BLACKPINK member to release a solo song.</li>
+
+<li>🌍 Global ambassador for luxury fashion brands.</li>
+
+<li>🏆 Multiple music awards with BLACKPINK.</li>
+
+<li>💎 One of the most influential Korean idols worldwide.</li>
+
+</ul>
+
+</div>
+
+<div class="section">
+
+<h2>📸 Jennie Gallery</h2>
+
+<div class="gallery">
+
+<img src="jennie1.jpg">
+
+<img src="jennie2.jpg">
+
+<img src="jennie3.jpg">
+
+<img src="jennie4.jpg">
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>💄 Fashion Queen</h2>
+
+<p>
+
+Jennie is internationally recognized for her influence in fashion.
+She has attended major fashion shows, appeared on magazine covers,
+and is admired for her elegant, bold, and luxurious style.
+Her nickname <b>"Human Chanel"</b> reflects her long association with luxury fashion.
+
+</p>
+
+</div>
+
+<div class="section">
+
+<h2>🌟 Why Fans Love Jennie</h2>
+
+<ul style="font-size:20px; line-height:2;">
+
+<li>🖤 Powerful stage presence</li>
+
+<li>✨ Amazing rap and vocals</li>
+
+<li>💎 Incredible fashion sense</li>
+
+<li>😊 Funny and caring personality</li>
+
+<li>🌍 Inspires millions worldwide</li>
+
+<li>🎤 Outstanding solo performances</li>
+
+</ul>
+
+</div>
+
+<div class="section">
+
+<h2>🎉 Random Jennie Fact</h2>
+
+<div class="fact" id="factBox">
+
+Click the button below to discover a fun Jennie fact!
+
+</div>
+
+<center>
+
+<button class="button" onclick="randomFact()">
+
+✨ Show Fact
+
+</button>
+
+</center>
+
+</div>
+
+<div class="section" style="text-align:center;">
+
+<h2>🎵 Stream My Jennie Playlist</h2>
+
+<p>
+
+Enjoy my Jennie playlist on YouTube filled with songs, performances and more! 🖤
+
+</p>
+
+<a class="button"
+
+href="https://youtu.be/vR49dHUwMUA?si=2XGJKkeS7KMX3Z58"
+target="_blank">
+
+🎧 Listen on YouTube
+
+</a>
+
+</div>
+
+<div class="section" style="text-align:center;">
+
+<h2>💜 Support Glowidolish</h2>
+
+<p>
+
+Subscribe to <b>Glowidolish</b> for BLACKPINK edits, K-pop facts,
+news, playlists, shorts and much more!
+
+</p>
+
+<a class="button"
+
+href="https://www.youtube.com/@Glowidolish"
+
+target="_blank">
+
+💜 Subscribe
+
+</a>
+
+<br><br>
+
+<a class="button" href="blackpink.html">
+
+⬅ Back to BLACKPINK
+
+</a>
+
+<br><br>
+
+<a class="button" href="myprofile.html">
+
+🏠 Home
+
+</a>
+
+</div>
+
+<footer style="text-align:center;padding:40px;background:rgba(255,255,255,.08);margin-top:50px;">
+
+<h2>🖤 Jennie Ruby Jane 🖤</h2>
+
+<p style="margin-top:15px;font-size:20px;">
+
+"Confidence is the best outfit. Wear it every day."
+
+</p>
+
+<p style="margin-top:20px;">
+
+Made with 🖤 by Glowidolish
+
+</p>
+
+</footer>
+
+<script>
+
+const facts=[
+
+"🖤 Jennie was the first BLACKPINK member to debut as a solo artist.",
+
+"💎 Fans often call Jennie the 'Human Chanel'.",
+
+"🌍 Jennie trained for several years before debuting with BLACKPINK.",
+
+"🎤 Jennie is known for both her powerful rap and singing.",
+
+"✨ Jennie has appeared on numerous international magazine covers.",
+
+"👑 Jennie is one of the most influential K-pop fashion icons."
+
+];
+
+function randomFact(){
+
+document.getElementById("factBox").innerHTML=
+
+facts[Math.floor(Math.random()*facts.length)];
+
+}
+
+</script>
+
+</body>
+
+</html>

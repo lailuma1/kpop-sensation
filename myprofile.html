@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Glowidolish | K-Pop Universe</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#ffb6d9,#ff69b4,#ff1493);
+background-size:300% 300%;
+animation:bgMove 10s infinite alternate;
+color:white;
+}
+
+@keyframes bgMove{
+0%{background-position:left;}
+100%{background-position:right;}
+}
+
+header{
+text-align:center;
+padding:50px;
+}
+
+header h1{
+font-size:60px;
+text-shadow:3px 3px 15px white;
+animation:glow 2s infinite alternate;
+}
+
+@keyframes glow{
+from{text-shadow:0 0 10px white;}
+to{text-shadow:0 0 30px hotpink;}
+}
+
+header p{
+font-size:22px;
+margin-top:10px;
+}
+
+.subscribe{
+display:inline-block;
+margin-top:20px;
+padding:15px 35px;
+background:white;
+color:#ff1493;
+border-radius:40px;
+text-decoration:none;
+font-weight:bold;
+transition:.4s;
+}
+
+.subscribe:hover{
+transform:scale(1.1);
+background:#ffe6f2;
+}
+
+.container{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:30px;
+padding:50px;
+}
+
+.card{
+width:300px;
+background:rgba(255,255,255,.15);
+backdrop-filter:blur(12px);
+border-radius:20px;
+overflow:hidden;
+transition:.5s;
+box-shadow:0 10px 25px rgba(0,0,0,.3);
+}
+
+.card:hover{
+transform:translateY(-10px) scale(1.05);
+}
+
+.card img{
+width:100%;
+height:220px;
+object-fit:cover;
+}
+
+.card h2{
+text-align:center;
+padding:15px;
+}
+
+.card p{
+padding:0 15px 20px;
+text-align:center;
+}
+
+.card a{
+display:block;
+text-align:center;
+margin:20px;
+padding:12px;
+background:#ff1493;
+color:white;
+text-decoration:none;
+border-radius:30px;
+transition:.3s;
+}
+
+.card a:hover{
+background:white;
+color:#ff1493;
+}
+
+footer{
+text-align:center;
+padding:30px;
+font-size:18px;
+background:rgba(0,0,0,.2);
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>💖 Glowidolish 💖</h1>
+
+<p>Your Ultimate K-Pop Destination!</p>
+
+<a class="subscribe" href="https://youtube.com/@Glowidolish" target="_blank">
+Subscribe Now
+</a>
+
+</header>
+
+<div class="container">
+
+<div class="card">
+<img src="blackpink.jpg" alt="BLACKPINK">
+<h2>🖤 BLACKPINK</h2>
+<p>Explore BLACKPINK news, edits, facts, performances, and more.</p>
+<a href="blackpink.html">Explore BLACKPINK</a>
+</div>
+
+<div class="card">
+<img src="bts.jpg" alt="BTS">
+<h2>💜 BTS</h2>
+<p>Discover BTS videos, updates, and everything about the members.</p>
+<a href="#">Know More About BTS</a>
+</div>
+
+<div class="card">
+<img src="straykids.jpg" alt="Stray Kids">
+<h2>❤️ Stray Kids</h2>
+<p>Dive into the world of Stray Kids with exciting content.</p>
+<a href="#">Explore Stray Kids</a>
+</div>
+
+<div class="card">
+<img src="txt.jpg" alt="TXT">
+<h2>💙 TXT</h2>
+<p>Enjoy TXT edits, facts, music, and fan content.</p>
+<a href="#">Know More About TXT</a>
+</div>
+
+<div class="card">
+<img src="twice.jpg" alt="TWICE">
+<h2>🍭 TWICE</h2>
+<p>Everything you love about TWICE in one place.</p>
+<a href="#">Explore TWICE</a>
+</div>
+
+<div class="card">
+<img src="enhypen.jpg" alt="ENHYPEN">
+<h2>🔥 ENHYPEN</h2>
+<p>Stay updated with ENHYPEN videos and amazing edits.</p>
+<a href="#">Know More About ENHYPEN</a>
+</div>
+
+<div class="card">
+<img src="babymonster.jpg" alt="BABYMONSTER">
+<h2>🩷 BABYMONSTER</h2>
+<p>Discover BABYMONSTER's latest music, performances, member profiles, edits, and exciting updates.</p>
+<a href="#">Explore BABYMONSTER</a>
+</div>
+
+</div>
+
+<footer>
+
+✨ Subscribe to <b>Glowidolish</b> for K-Pop edits, updates, facts, shorts, and fun content! ✨
+
+</footer>
+
+</body>
+</html>
+

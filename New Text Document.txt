@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Lisa | Glowidolish</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,Helvetica,sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+
+background:linear-gradient(-45deg,#FFD700,#FFC300,#FFB000,#FFE45E,#FFD700);
+background-size:400% 400%;
+animation:bg 15s ease infinite;
+color:white;
+overflow-x:hidden;
+
+}
+
+@keyframes bg{
+
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+
+}
+
+.sparkles{
+
+position:fixed;
+width:100%;
+height:100%;
+top:0;
+left:0;
+pointer-events:none;
+
+background-image:
+
+radial-gradient(white 1px,transparent 1px),
+
+radial-gradient(gold 2px,transparent 2px),
+
+radial-gradient(#fff6a9 2px,transparent 2px);
+
+background-size:120px 120px,220px 220px,300px 300px;
+
+animation:sparkle 8s linear infinite;
+
+opacity:.8;
+
+}
+
+@keyframes sparkle{
+
+0%{transform:translateY(0);}
+100%{transform:translateY(-80px);}
+
+}
+
+header{
+
+text-align:center;
+padding:60px 20px;
+
+}
+
+header h1{
+
+font-size:70px;
+text-shadow:0 0 20px white;
+
+}
+
+header h2{
+
+margin-top:10px;
+font-size:30px;
+color:#fff7c2;
+
+}
+
+header p{
+
+margin-top:20px;
+font-size:20px;
+width:80%;
+margin:auto;
+line-height:1.8;
+
+}
+
+.hero{
+
+width:90%;
+max-width:950px;
+margin:40px auto;
+overflow:hidden;
+border-radius:30px;
+box-shadow:0 0 35px rgba(255,255,255,.5);
+animation:float 5s ease-in-out infinite;
+
+}
+
+@keyframes float{
+
+0%,100%{transform:translateY(0);}
+50%{transform:translateY(-10px);}
+
+}
+
+.hero img{
+
+width:100%;
+display:block;
+transition:.6s;
+
+}
+
+.hero img:hover{
+
+transform:scale(1.05);
+
+}
+
+.section{
+
+width:90%;
+max-width:1100px;
+margin:45px auto;
+padding:35px;
+
+background:rgba(255,255,255,.15);
+
+backdrop-filter:blur(15px);
+
+border-radius:25px;
+
+box-shadow:0 0 20px rgba(255,255,255,.4);
+
+transition:.5s;
+
+}
+
+.section:hover{
+
+transform:translateY(-8px);
+
+}
+
+.section h2{
+
+font-size:40px;
+margin-bottom:20px;
+
+}
+
+.section p{
+
+font-size:20px;
+line-height:1.9;
+
+}
+
+.gallery{
+
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:25px;
+margin-top:30px;
+
+}
+
+.gallery img{
+
+width:240px;
+height:330px;
+object-fit:cover;
+
+border-radius:20px;
+
+cursor:pointer;
+
+transition:.5s;
+
+box-shadow:0 0 20px rgba(255,255,255,.4);
+
+}
+
+.gallery img:hover{
+
+transform:scale(1.08);
+
+box-shadow:0 0 35px white;
+
+}
+
+.button{
+
+display:inline-block;
+
+margin-top:25px;
+
+padding:15px 35px;
+
+background:white;
+
+color:#d49a00;
+
+text-decoration:none;
+
+font-weight:bold;
+
+border-radius:40px;
+
+transition:.4s;
+
+}
+
+.button:hover{
+
+background:#fff5b5;
+
+transform:scale(1.1);
+
+}
+
+.fact{
+
+margin-top:20px;
+
+padding:20px;
+
+background:rgba(255,255,255,.15);
+
+border-radius:20px;
+
+font-size:20px;
+
+text-align:center;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="sparkles"></div>
+
+<header>
+
+<h1>💛 Lisa 💛</h1>
+
+<h2>The Golden Performer ✨</h2>
+
+<p>
+
+Lalisa Manobal is known for her incredible dance skills,
+powerful stage presence, rap, fashion, and charismatic personality.
+She has become one of the most influential K-pop stars in the world.
+
+</p>
+
+</header>
+
+<div class="hero">
+
+<img src="lisa-banner.jpg" alt="Lisa">
+
+</div>
+
+<div class="section">
+
+<h2>👑 About Lisa</h2>
+
+<p>
+
+Lisa debuted with BLACKPINK in 2016 and quickly became famous
+for her outstanding dancing, energetic performances,
+and global popularity.
+She later achieved huge success as a solo artist.
+
+</p>
+
+</div>
+
+<div class="section">
+
+<h2>🏆 Career Highlights</h2>
+
+<ul style="font-size:20px;line-height:2;">
+
+<li>💛 Member of BLACKPINK.</li>
+
+<li>💃 One of K-pop's most famous dancers.</li>
+
+<li>🎤 Successful solo artist.</li>
+
+<li>🌍 Worldwide fashion icon.</li>
+
+<li>🏆 Multiple international music awards.</li>
+
+</ul>
+
+</div>
+
+<div class="section">
+
+<h2>📸 Lisa Gallery</h2>
+
+<div class="gallery">
+
+<img src="lisa1.jpg">
+
+<img src="lisa2.jpg">
+
+<img src="lisa3.jpg">
+
+<img src="lisa4.jpg">
+
+</div>
+
+</div>

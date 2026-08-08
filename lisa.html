@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Lisa | Glowidolish</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,Helvetica,sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+
+background:linear-gradient(-45deg,#FFD43B,#FFC107,#FFB703,#FFD43B,#FFE066);
+background-size:400% 400%;
+animation:bg 15s ease infinite;
+color:white;
+overflow-x:hidden;
+
+}
+
+@keyframes bg{
+
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+
+}
+
+.sparkles{
+
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+pointer-events:none;
+
+background-image:
+
+radial-gradient(white 1px, transparent 1px),
+
+radial-gradient(#fff3bf 2px, transparent 2px),
+
+radial-gradient(#ffe066 2px, transparent 2px);
+
+background-size:120px 120px,220px 220px,300px 300px;
+
+animation:glitter 8s linear infinite;
+
+opacity:.8;
+
+}
+
+@keyframes glitter{
+
+0%{
+transform:translateY(0);
+}
+
+100%{
+transform:translateY(-80px);
+}
+
+}
+
+header{
+
+text-align:center;
+padding:60px 20px;
+
+}
+
+header h1{
+
+font-size:70px;
+color:white;
+text-shadow:0 0 20px orange;
+
+}
+
+header h2{
+
+margin-top:10px;
+color:#fff7c2;
+font-size:30px;
+
+}
+
+header p{
+
+margin-top:20px;
+font-size:20px;
+line-height:1.8;
+width:80%;
+margin-left:auto;
+margin-right:auto;
+
+}
+
+.hero{
+
+width:90%;
+max-width:950px;
+margin:40px auto;
+border-radius:30px;
+overflow:hidden;
+box-shadow:0 0 35px orange;
+
+}
+
+.hero img{
+
+width:100%;
+transition:.6s;
+
+}
+
+.hero img:hover{
+
+transform:scale(1.05);
+
+}
+
+.section{
+
+width:90%;
+max-width:1100px;
+margin:45px auto;
+padding:35px;
+border-radius:25px;
+
+background:rgba(255,216,168,.85);
+
+backdrop-filter:blur(12px);
+
+box-shadow:0 0 25px rgba(255,193,7,.4);
+
+transition:.4s;
+
+color:#5b3400;
+
+}
+
+.section:hover{
+
+transform:translateY(-8px);
+
+}
+
+.section h2{
+
+font-size:40px;
+margin-bottom:20px;
+color:#d97706;
+
+}
+
+.section p{
+
+font-size:20px;
+line-height:1.9;
+
+}
+
+.gallery{
+
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:25px;
+margin-top:25px;
+
+}
+
+.gallery img{
+
+width:250px;
+height:340px;
+object-fit:cover;
+border-radius:20px;
+transition:.5s;
+box-shadow:0 0 20px rgba(255,193,7,.5);
+cursor:pointer;
+
+}
+
+.gallery img:hover{
+
+transform:scale(1.08) rotate(2deg);
+
+box-shadow:0 0 40px orange;
+
+}
+
+.button{
+
+display:inline-block;
+margin-top:25px;
+padding:15px 35px;
+background:#ffb703;
+color:white;
+font-weight:bold;
+text-decoration:none;
+border-radius:40px;
+transition:.4s;
+
+}
+
+.button:hover{
+
+background:white;
+color:#d97706;
+transform:scale(1.1);
+
+}
+
+.fact{
+
+margin-top:25px;
+padding:20px;
+background:rgba(255,255,255,.4);
+border-radius:20px;
+font-size:20px;
+text-align:center;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="sparkles"></div>
+
+<header>
+
+<h1>💛 Lalisa Manobal 💛</h1>
+
+<h2>The Dancing Queen ✨</h2>
+
+<p>
+
+Lisa is a Thai singer, rapper, dancer and global superstar.
+Known for her powerful dancing, incredible stage presence,
+and bright personality, Lisa has inspired millions of fans
+all around the world.
+
+</p>
+
+</header>
+
+<div class="hero">
+
+<img src="lisa-banner.jpg" alt="Lisa">
+
+</div>
+
+<div class="section">
+
+<h2>👑 About Lisa</h2>
+
+<p>
+
+Lisa debuted with BLACKPINK in 2016.
+She is the first non-Korean member of the group and is famous
+for her incredible dance skills, charismatic performances,
+and successful solo career.
+Fans admire Lisa for her confidence, kindness and positive energy.
+
+</p>
+
+</div>
+<div class="section">
+
+<h2>🏆 Career Highlights</h2>
+
+<ul style="font-size:20px; line-height:2;">
+
+<li>💛 Member of BLACKPINK.</li>
+
+<li>💃 One of the world's most recognized K-pop dancers.</li>
+
+<li>🎤 Successful solo artist with global achievements.</li>
+
+<li>🌍 Global ambassador for luxury fashion brands.</li>
+
+<li>🏆 Winner of numerous music awards.</li>
+
+<li>⭐ One of the most-followed K-pop idols worldwide.</li>
+
+</ul>
+
+</div>
+
+<div class="section">
+
+<h2>📸 Lisa Gallery</h2>
+
+<div class="gallery">
+
+<img src="lisa1.jpg" alt="Lisa">
+
+<img src="lisa2.jpg" alt="Lisa">
+
+<img src="lisa3.jpg" alt="Lisa">
+
+<img src="lisa4.jpg" alt="Lisa">
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>💃 Dance Queen</h2>
+
+<p>
+
+Lisa is famous for her incredible dance skills and energetic stage performances.
+Her sharp movements, confidence and charisma have made her one of the most respected dancers in K-pop.
+She inspires dancers around the world with every performance.
+
+</p>
+
+</div>
+
+<div class="section">
+
+<h2>🌟 Why Fans Love Lisa</h2>
+
+<ul style="font-size:20px; line-height:2;">
+
+<li>💛 Incredible dancing skills</li>
+
+<li>🎤 Powerful rap performances</li>
+
+<li>😊 Bright and funny personality</li>
+
+<li>🐱 Loves her adorable cats</li>
+
+<li>🌍 Inspires millions around the world</li>
+
+<li>✨ Amazing fashion and stage presence</li>
+
+</ul>
+
+</div>
+
+<div class="section">
+
+<h2>🎉 Random Lisa Fact</h2>
+
+<div class="fact" id="factBox">
+
+Click the button below to discover a fun Lisa fact!
+
+</div>
+
+<center>
+
+<button class="button" onclick="randomFact()">
+
+✨ Show Fact
+
+</button>
+
+</center>
+
+</div>
+
+<div class="section" style="text-align:center;">
+
+<h2>🎵 Stream My Lisa Playlist</h2>
+
+<p>
+
+Enjoy my Lisa playlist on YouTube filled with songs, performances and more! 💛
+
+</p>
+
+<a class="button"
+
+href="https://www.youtube.com/results?search_query=Lisa+playlist"
+
+target="_blank">
+
+🎧 Listen on YouTube
+
+</a>
+
+</div>
+
+<div class="section" style="text-align:center;">
+
+<h2>💜 Support Glowidolish</h2>
+
+<p>
+
+Subscribe to <b>Glowidolish</b> for BLACKPINK edits, K-pop facts,
+news, playlists, shorts and much more!
+
+</p>
+
+<a class="button"
+
+href="https://www.youtube.com/@Glowidolish"
+
+target="_blank">
+
+💜 Subscribe
+
+</a>
+
+<br><br>
+
+<a class="button" href="blackpink.html">
+
+⬅ Back to BLACKPINK
+
+</a>
+
+<br><br>
+
+<a class="button" href="myprofile.html">
+
+🏠 Home
+
+</a>
+
+</div>
+
+<footer style="text-align:center;padding:40px;background:rgba(255,216,168,.75);margin-top:50px;color:#5b3400;">
+
+<h2>💛 Lalisa Manobal 💛</h2>
+
+<p style="margin-top:15px;font-size:20px;">
+
+"Dream big, work hard and never stop dancing."
+
+</p>
+
+<p style="margin-top:20px;">
+
+Made with 💛 by Glowidolish
+
+</p>
+
+</footer>
+
+<script>
+
+const facts=[
+
+"💛 Lisa was born in Buriram, Thailand.",
+
+"🐱 Lisa has several pet cats that she loves.",
+
+"💃 Lisa is considered one of the best dancers in K-pop.",
+
+"🌍 Lisa can speak Thai, Korean and English.",
+
+"🎤 Lisa became the first non-Korean member of BLACKPINK.",
+
+"✨ Lisa is loved for both her stage presence and kind personality."
+
+];
+
+function randomFact(){
+
+document.getElementById("factBox").innerHTML=
+
+facts[Math.floor(Math.random()*facts.length)];
+
+}
+
+</script>
+
+</body>
+
+</html>
