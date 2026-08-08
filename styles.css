@@ -1,0 +1,138 @@
+/* styles.css - extracted from rose.html and extended with accessibility helpers */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial,Helvetica,sans-serif;
+  scroll-behavior:smooth;
+}
+
+body{
+  background:linear-gradient(-45deg,#ffb6c1,#ff69b4,#ff1493,#ff85c1,#ffd1dc);
+  background-size:400% 400%;
+  animation:bg 15s ease infinite;
+  color:white;
+  overflow-x:hidden;
+}
+
+@keyframes bg{
+  0%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0% 50%;}
+}
+
+.sparkles{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  pointer-events:none;
+  background-image:
+    radial-gradient(white 1px,transparent 1px),
+    radial-gradient(#ffe4ec 2px,transparent 2px),
+    radial-gradient(#fff0f5 2px,transparent 2px);
+  background-size:120px 120px,200px 200px,260px 260px;
+  animation:sparkle 10s linear infinite;
+  opacity:.8;
+}
+
+@keyframes sparkle{
+  0%{ transform:translateY(0); }
+  100%{ transform:translateY(-80px); }
+}
+
+header{
+  text-align:center;
+  padding:60px 20px;
+}
+
+header h1{
+  font-size:70px;
+  text-shadow:0 0 20px white;
+}
+
+header h2{
+  font-size:30px;
+  margin-top:10px;
+  color:#fff0f5;
+}
+
+header p{
+  margin-top:20px;
+  font-size:20px;
+  width:80%;
+  margin:auto;
+  line-height:1.8;
+}
+
+.hero{
+  width:90%;
+  max-width:950px;
+  margin:40px auto;
+  border-radius:30px;
+  overflow:hidden;
+  box-shadow:0 0 35px rgba(255,255,255,.5);
+  animation:float 5s ease-in-out infinite;
+}
+
+@keyframes float{
+  0%,100%{ transform:translateY(0); }
+  50%{ transform:translateY(-12px); }
+}
+
+.hero img{ width:100%; display:block; transition:.6s; }
+.hero img:hover{ transform:scale(1.05); }
+
+.section{
+  width:90%;
+  max-width:1100px;
+  margin:45px auto;
+  padding:35px;
+  border-radius:25px;
+  background:rgba(255,255,255,.15);
+  backdrop-filter:blur(15px);
+  box-shadow:0 0 20px rgba(255,255,255,.4);
+  transition:.5s;
+}
+
+.section:hover{ transform:translateY(-10px); }
+.section h2{ font-size:40px; margin-bottom:20px; color:white; }
+.section p{ font-size:20px; line-height:1.9; }
+
+.gallery{ display:flex; justify-content:center; flex-wrap:wrap; gap:25px; margin-top:30px; }
+
+.gallery img{
+  width:240px; height:330px; object-fit:cover; border-radius:20px; cursor:pointer; transition:.5s; box-shadow:0 0 20px rgba(255,255,255,.4);
+}
+.gallery img:hover{ transform:scale(1.08) rotate(-2deg); box-shadow:0 0 35px white; }
+
+.button{ display:inline-block; margin-top:25px; padding:15px 35px; background:white; color:#ff1493; font-weight:bold; text-decoration:none; border-radius:40px; transition:.4s; }
+.button:hover{ background:#ffd1dc; transform:scale(1.1); }
+
+.fact{ margin-top:20px; padding:20px; background:rgba(255,255,255,.15); border-radius:20px; text-align:center; font-size:20px; }
+
+/* Accessibility and focus styles */
+.button:focus, .gallery img:focus, #topBtn:focus {
+  outline: 3px solid rgba(255,255,255,0.6);
+  outline-offset: 4px;
+}
+
+/* Welcome banner */
+#welcomeBanner{ position:fixed; top:20px; left:50%; transform:translateX(-50%); background:rgba(255,255,255,0.12); color:white; padding:12px 20px; border-radius:999px; box-shadow:0 0 20px rgba(255,255,255,0.2); font-size:18px; display:none; z-index:9999; }
+#welcomeBanner.show{display:block;}
+
+/* Skip link (visually hidden but visible when focused) */
+.skip-link{
+  position:absolute; left:-999px; top:auto; width:1px; height:1px; overflow:hidden;
+}
+.skip-link:focus{
+  left:20px; top:20px; width:auto; height:auto; padding:10px 15px; background:#ffffff; color:#ff1493; border-radius:6px; z-index:10000; text-decoration:none;
+}
+
+/* Responsive tweaks */
+@media (max-width:600px){
+  header h1{ font-size:48px; }
+  .gallery img{ width:160px; height:220px; }
+}
