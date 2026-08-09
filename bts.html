@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>BTS | Glowidolish</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+    scroll-behavior:smooth;
+}
+
+body{
+
+    background:
+    linear-gradient(-45deg,
+    #16002b,
+    #3b0875,
+    #6a0dad,
+    #8e44ad,
+    #240047);
+
+    background-size:400% 400%;
+
+    animation:purpleBackground 15s ease infinite;
+
+    color:white;
+
+    overflow-x:hidden;
+}
+
+@keyframes purpleBackground{
+
+    0%{
+        background-position:0% 50%;
+    }
+
+    50%{
+        background-position:100% 50%;
+    }
+
+    100%{
+        background-position:0% 50%;
+    }
+
+}
+
+/* PURPLE SPARKLES */
+
+.sparkles{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    pointer-events:none;
+
+    background-image:
+
+    radial-gradient(
+        white 1px,
+        transparent 1px
+    ),
+
+    radial-gradient(
+        #e6ccff 2px,
+        transparent 2px
+    ),
+
+    radial-gradient(
+        #c77dff 1.5px,
+        transparent 1.5px
+    );
+
+    background-size:
+    100px 100px,
+    180px 180px,
+    250px 250px;
+
+    animation:starsMove 10s linear infinite;
+
+    opacity:.8;
+
+    z-index:0;
+}
+
+@keyframes starsMove{
+
+    from{
+        transform:translateY(0);
+    }
+
+    to{
+        transform:translateY(-100px);
+    }
+
+}
+
+/* HEADER */
+
+header{
+
+    position:relative;
+
+    text-align:center;
+
+    padding:70px 20px;
+
+    z-index:1;
+}
+
+header h1{
+
+    font-size:75px;
+
+    text-shadow:
+    0 0 10px white,
+    0 0 25px #d8b4fe,
+    0 0 45px #a855f7;
+
+}
+
+header h2{
+
+    margin-top:15px;
+
+    font-size:30px;
+
+    color:#ead7ff;
+
+    text-shadow:0 0 15px #c084fc;
+
+}
+
+header p{
+
+    width:80%;
+
+    max-width:900px;
+
+    margin:25px auto 0;
+
+    font-size:20px;
+
+    line-height:1.9;
+
+}
+
+/* HERO */
+
+.hero{
+
+    position:relative;
+
+    width:90%;
+
+    max-width:1000px;
+
+    margin:30px auto 60px;
+
+    border-radius:30px;
+
+    overflow:hidden;
+
+    box-shadow:
+    0 0 20px #c084fc,
+    0 0 50px rgba(168,85,247,.5);
+
+    animation:heroFloat 5s ease-in-out infinite;
+
+    z-index:1;
+}
+
+@keyframes heroFloat{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-12px);
+    }
+
+}
+
+.hero img{
+
+    width:100%;
+
+    display:block;
+
+    transition:.6s;
+}
+
+.hero img:hover{
+
+    transform:scale(1.05);
+
+}
+
+/* SECTIONS */
+
+.section{
+
+    position:relative;
+
+    width:90%;
+
+    max-width:1100px;
+
+    margin:45px auto;
+
+    padding:40px;
+
+    border-radius:28px;
+
+    background:rgba(255,255,255,.12);
+
+    backdrop-filter:blur(15px);
+
+    border:1px solid rgba(255,255,255,.2);
+
+    box-shadow:
+    0 0 25px rgba(192,132,252,.25);
+
+    transition:.5s;
+
+    z-index:1;
+}
+
+.section:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:
+    0 0 35px rgba(216,180,254,.5);
+
+}
+
+.section h2{
+
+    font-size:40px;
+
+    margin-bottom:20px;
+
+    color:#f1e4ff;
+
+    text-shadow:0 0 15px #c084fc;
+
+}
+
+.section p{
+
+    font-size:20px;
+
+    line-height:1.9;
+
+}
+
+/* MEMBER CARDS */
+
+.members{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    gap:25px;
+
+    margin-top:30px;
+}
+
+.member{
+
+    width:210px;
+
+    padding:20px;
+
+    text-align:center;
+
+    border-radius:22px;
+
+    background:rgba(255,255,255,.1);
+
+    transition:.5s;
+
+    box-shadow:0 0 15px rgba(192,132,252,.2);
+}
+
+.member:hover{
+
+    transform:
+    translateY(-12px)
+    scale(1.04);
+
+    box-shadow:
+    0 0 30px #c084fc;
+}
+
+.member a{
+
+    display:block;
+
+}
+
+.member img{
+
+    width:100%;
+
+    height:260px;
+
+    object-fit:cover;
+
+    border-radius:18px;
+
+    transition:.5s;
+
+    cursor:pointer;
+}
+
+.member img:hover{
+
+    transform:scale(1.05);
+
+    box-shadow:0 0 25px #d8b4fe;
+}
+
+.member h3{
+
+    margin-top:15px;
+
+    font-size:24px;
+
+    color:#f3e8ff;
+}
+
+.member p{
+
+    margin-top:8px;
+
+    font-size:16px;
+
+}
+
+/* LIST */
+
+ul{
+
+    padding-left:30px;
+
+    font-size:20px;
+
+    line-height:2;
+}
+
+/* GALLERY */
+
+.gallery{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    gap:25px;
+
+    margin-top:30px;
+}
+
+.gallery img{
+
+    width:240px;
+
+    height:320px;
+
+    object-fit:cover;
+
+    border-radius:20px;
+
+    cursor:pointer;
+
+    transition:.5s;
+
+    box-shadow:
+    0 0 20px rgba(255,255,255,.25);
+}
+
+.gallery img:hover{
+
+    transform:
+    scale(1.08)
+    rotate(2deg);
+
+    box-shadow:
+    0 0 40px #d8b4fe;
+}
+
+/* BUTTONS */
+
+.button{
+
+    display:inline-block;
+
+    margin-top:25px;
+
+    padding:15px 35px;
+
+    background:#f3e8ff;
+
+    color:#5b21b6;
+
+    font-weight:bold;
+
+    text-decoration:none;
+
+    border-radius:40px;
+
+    transition:.4s;
+
+    box-shadow:
+    0 0 15px rgba(255,255,255,.5);
+}
+
+.button:hover{
+
+    background:white;
+
+    transform:scale(1.1);
+
+    box-shadow:
+    0 0 30px white;
+}
+
+/* FACT BOX */
+
+.fact{
+
+    margin-top:20px;
+
+    padding:25px;
+
+    border-radius:20px;
+
+    background:rgba(255,255,255,.1);
+
+    text-align:center;
+
+    font-size:20px;
+
+    min-height:70px;
+}
+
+/* FOOTER */
+
+footer{
+
+    position:relative;
+
+    text-align:center;
+
+    padding:50px 20px;
+
+    margin-top:60px;
+
+    background:rgba(0,0,0,.25);
+
+    z-index:1;
+}
+
+footer h2{
+
+    font-size:35px;
+
+    text-shadow:0 0 20px #c084fc;
+}
+
+footer p{
+
+    margin-top:15px;
+
+    font-size:18px;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="sparkles"></div>
+
+<header>
+
+<h1>💜 BTS 💜</h1>
+
+<h2>Beyond The Scene ✨</h2>
+
+<p>
+
+Welcome to the BTS section of Glowidolish!
+
+Explore the members, music, achievements,
+fun facts, and unforgettable moments of
+one of the world's most influential K-pop groups.
+
+💜 I Purple You, ARMY! 💜
+
+</p>
+
+</header>
+
+<div class="hero">
+
+<img src="bts-banner.jpg" alt="BTS">
+
+</div>
+
+
+<!-- ABOUT BTS -->
+
+<div class="section">
+
+<h2>💜 About BTS</h2>
+
+<p>
+
+BTS is a South Korean boy group formed by BIGHIT MUSIC.
+The group debuted in 2013 and consists of seven members:
+RM, Jin, SUGA, j-hope, Jimin, V, and Jung Kook.
+
+Over the years, BTS has achieved worldwide recognition
+through their music, performances, messages, and connection
+with their fans, known as ARMY.
+
+</p>
+
+</div>
+
+
+<!-- MEMBERS -->
+
+<div class="section">
+
+<h2>👑 Meet the Members</h2>
+
+<div class="members">
+
+
+<!-- RM -->
+
+<div class="member">
+
+<a href="rm.html">
+
+<img src="rm.jpg" alt="RM">
+
+</a>
+
+<h3>💜 RM</h3>
+
+<p>Leader & Rapper</p>
+
+</div>
+
+
+<!-- JIN -->
+
+<div class="member">
+
+<a href="jin.html">
+
+<img src="jin.jpg" alt="Jin">
+
+</a>
+
+<h3>💜 Jin</h3>
+
+<p>Vocalist</p>
+
+</div>
+
+
+<!-- SUGA -->
+
+<div class="member">
+
+<a href="suga.html">
+
+<img src="suga.jpg" alt="SUGA">
+
+</a>
+
+<h3>💜 SUGA</h3>
+
+<p>Rapper & Producer</p>
+
+</div>
+
+
+<!-- J-HOPE -->
+
+<div class="member">
+
+<a href="jhope.html">
+
+<img src="jhope.jpg" alt="j-hope">
+
+</a>
+
+<h3>💜 j-hope</h3>
+
+<p>Rapper & Dancer</p>
+
+</div>
+
+
+<!-- JIMIN -->
+
+<div class="member">
+
+<a href="jimin.html">
+
+<img src="jimin.jpg" alt="Jimin">
+
+</a>
+
+<h3>💜 Jimin</h3>
+
+<p>Vocalist & Dancer</p>
+
+</div>
+
+
+<!-- V -->
+
+<div class="member">
+
+<a href="v.html">
+
+<img src="v.jpg" alt="V">
+
+</a>
+
+<h3>💜 V</h3>
+
+<p>Vocalist</p>
+
+</div>
+
+
+<!-- JUNG KOOK -->
+
+<div class="member">
+
+<a href="jungkook.html">
+
+<img src="jungkook.jpg" alt="Jung Kook">
+
+</a>
+
+<h3>💜 Jung Kook</h3>
+
+<p>Vocalist & Performer</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+<!-- ACHIEVEMENTS -->
+
+<div class="section">
+
+<h2>🏆 BTS Achievements</h2>
+
+<ul>
+
+<li>🌎 Achieved worldwide success with music in multiple languages.</li>
+
+<li>🎵 Earned numerous major music awards.</li>
+
+<li>📈 Reached the top of major international music charts.</li>
+
+<li>🏟️ Performed in major stadiums around the world.</li>
+
+<li>💜 Built one of the largest global music fandoms, ARMY.</li>
+
+<li>🌟 Became influential figures in global pop culture.</li>
+
+</ul>
+
+</div>
+
+
+<!-- GALLERY -->
+
+<div class="section">
+
+<h2>📸 BTS Gallery</h2>
+
+<div class="gallery">
+
+<img src="bts1.jpg" alt="BTS">
+
+<img src="bts2.jpg" alt="BTS">
+
+<img src="bts3.jpg" alt="BTS">
