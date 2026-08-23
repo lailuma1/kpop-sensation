@@ -1292,6 +1292,7 @@ footer p{
 </style>
 
 </head>
+
 <body>
 
 
@@ -1310,7 +1311,6 @@ footer p{
 
 <a href="index.html"
    class="logo">
-
 💜 <span>Glowidolish</span>
 
 </a>
@@ -1318,7 +1318,6 @@ footer p{
 
 <button class="menu-button"
         id="menuButton">
-
 ☰
 
 </button>
@@ -1330,37 +1329,49 @@ footer p{
 <li>
 <a href="index.html">
 🏠 Home
+
 </a>
+
 </li>
 
 <li>
 <a href="#about">
 💜 About
+
 </a>
+
 </li>
 
 <li>
 <a href="#members">
-👑 Members
+👥 Members
+
 </a>
+
 </li>
 
 <li>
 <a href="#achievements">
 🏆 Achievements
+
 </a>
+
 </li>
 
 <li>
 <a href="#gallery">
 📸 Gallery
+
 </a>
+
 </li>
 
 <li>
 <a href="#facts">
-✨ Facts
+🎬 Facts
+
 </a>
+
 </li>
 
 </ul>
@@ -1380,9 +1391,8 @@ footer p{
 
 
 <h2>
-Beyond The Scene ✨
+Beyond The Scene 🎬
 </h2>
-
 
 <p>
 
@@ -1404,7 +1414,6 @@ of one of the world's most influential K-pop groups.
 
 <a href="index.html"
    class="button">
-
 🏠 Back to Glowidolish
 
 </a>
@@ -1413,15 +1422,13 @@ of one of the world's most influential K-pop groups.
 <a href="YOUR_PLAYLIST_LINK"
    target="_blank"
    class="button">
-
-🎶 BTS Playlist
+🎵 BTS Playlist
 
 </a>
 
 
 <button class="button purple-button"
         id="musicButton">
-
 🎵 Play Music
 
 </button>
@@ -1452,7 +1459,9 @@ of one of the world's most influential K-pop groups.
          id="about">
 
 <h2>
+
 💜 About BTS
+
 </h2>
 
 
@@ -1486,9 +1495,7 @@ and personal growth.
 <section class="section"
          id="members">
 
-<h2>
-👑 Meet the Members
-</h2>
+<h2>👥 Meet the Members</h2>
 
 
 <div class="members">
@@ -1506,11 +1513,15 @@ and personal growth.
 </a>
 
 <h3>
+
 💜 RM
+
 </h3>
 
 <p>
+
 Leader • Rapper
+
 </p>
 
 </div>
@@ -1528,11 +1539,15 @@ Leader • Rapper
 </a>
 
 <h3>
+
 💜 Jin
+
 </h3>
 
 <p>
+
 Vocalist
+
 </p>
 
 </div>
@@ -1550,11 +1565,15 @@ Vocalist
 </a>
 
 <h3>
+
 💜 SUGA
+
 </h3>
 
 <p>
+
 Rapper • Producer
+
 </p>
 
 </div>
@@ -1572,11 +1591,15 @@ Rapper • Producer
 </a>
 
 <h3>
+
 💜 j-hope
+
 </h3>
 
 <p>
+
 Rapper • Dancer
+
 </p>
 
 </div>
@@ -1594,11 +1617,15 @@ Rapper • Dancer
 </a>
 
 <h3>
+
 💜 Jimin
+
 </h3>
 
 <p>
+
 Vocalist • Dancer
+
 </p>
 
 </div>
@@ -1616,11 +1643,15 @@ Vocalist • Dancer
 </a>
 
 <h3>
+
 💜 V
+
 </h3>
 
 <p>
+
 Vocalist
+
 </p>
 
 </div>
@@ -1638,19 +1669,23 @@ Vocalist
 </a>
 
 <h3>
+
 💜 Jung Kook
+
 </h3>
 
 <p>
+
 Vocalist • Performer
+
 </p>
 
 </div>
 
-
 </div>
 
 </section>
+
 <!-- =====================================================
      FOOTER
 ===================================================== -->
@@ -1658,39 +1693,53 @@ Vocalist • Performer
 <footer>
 
 <h2>
+
 💜 Thanks for Visiting! 💜
+
 </h2>
 
 
 <p>
-Stay connected with BTS and ARMY! 💜✨
+
+Stay connected with BTS and ARMY! 💜🎬
+
 </p>
 
 
 <div class="footer-links">
 
 <a href="index.html">
+
 🏠 Glowidolish Home
+
 </a>
 
 
 <a href="#about">
+
 💜 About
+
 </a>
 
 
 <a href="#members">
-👑 Members
+
+👥 Members
+
 </a>
 
 
 <a href="#gallery">
+
 📸 Gallery
+
 </a>
 
 
 <a href="#facts">
-✨ Facts
+
+🎬 Facts
+
 </a>
 
 </div>
@@ -1759,14 +1808,12 @@ Stay connected with BTS and ARMY! 💜✨
 
 <script>
 
-
 /* =====================================================
    MOBILE NAVIGATION
 ===================================================== */
 
 const menuButton =
 document.getElementById("menuButton");
-
 const navLinks =
 document.getElementById("navLinks");
 
@@ -1803,7 +1850,6 @@ document
 
 const music =
 document.getElementById("bgMusic");
-
 const musicButton =
 document.getElementById("musicButton");
 
@@ -1829,107 +1875,22 @@ musicButton.addEventListener(
         else{
 
             music.play()
-            .then(function(){
+             .then(function(){
 
-                musicPlaying = true;
+                 musicPlaying = true;
 
-                musicButton.innerHTML =
-                "⏸️ Pause Music";
+                 musicButton.innerHTML =
+                 "⏸ Pause Music";
 
-            })
+             })
 
-            .catch(function(){
+             .catch(function(){
 
-                alert(
-                    "Music could not play. Make sure music.mp3 is uploaded to the same GitHub folder as bts.html."
-                );
+                 alert(
+                     "Music could not play. Make sure music.mp3 is uploaded to the same GitHub folder as bts.html."
+                 );
 
-            });
-
-        }
-
-    }
-);
-
-
-/* =====================================================
-   GALLERY LIGHTBOX
-===================================================== */
-
-const galleryImages =
-document.querySelectorAll(".gallery-image");
-
-const lightbox =
-document.getElementById("lightbox");
-
-const lightboxImage =
-document.getElementById("lightboxImage");
-
-const closeLightbox =
-document.getElementById("closeLightbox");
-
-
-galleryImages.forEach(
-    function(image){
-
-        image.addEventListener(
-            "click",
-            function(){
-
-                lightboxImage.src =
-                image.src;
-
-                lightboxImage.alt =
-                image.alt;
-
-                lightbox.classList.add(
-                    "active"
-                );
-
-            }
-        );
-
-    }
-);
-
-
-closeLightbox.addEventListener(
-    "click",
-    function(){
-
-        lightbox.classList.remove(
-            "active"
-        );
-
-    }
-);
-
-
-lightbox.addEventListener(
-    "click",
-    function(event){
-
-        if(event.target === lightbox){
-
-            lightbox.classList.remove(
-                "active"
-            );
-
-        }
-
-    }
-);
-
-
-document.addEventListener(
-    "keydown",
-    function(event){
-
-        if(event.key === "Escape"){
-
-            lightbox.classList.remove(
-                "active"
-            );
+             });
 
         }
 
@@ -2005,69 +1966,7 @@ document
 
 });
 
-
-/* =====================================================
-   SMOOTH SECTION ANIMATION
-===================================================== */
-
-const sections =
-document.querySelectorAll(".section");
-
-
-const sectionObserver =
-new IntersectionObserver(
-
-    function(entries){
-
-        entries.forEach(
-            function(entry){
-
-                if(entry.isIntersecting){
-
-                    entry.target.style.opacity =
-                    "1";
-
-                    entry.target.style.transform =
-                    "translateY(0)";
-
-                }
-
-            }
-        );
-
-    },
-
-    {
-        threshold:.12
-    }
-
-);
-
-
-sections.forEach(
-    function(section){
-
-        section.style.opacity =
-        "0";
-
-        section.style.transform =
-        "translateY(25px)";
-
-        section.style.transition =
-        "opacity .8s ease, transform .8s ease";
-
-        sectionObserver.observe(section);
-
-    }
-);
-
-
-/* =====================================================
-   END
-===================================================== */
-
 </script>
-
 
 </body>
 
