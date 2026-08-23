@@ -1,0 +1,1990 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>RM | Glowidolish ❤️</title>
+
+<style>
+
+/* =====================================================
+   RESET
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+    scroll-behavior:smooth;
+}
+
+html{
+    scroll-padding-top:80px;
+}
+
+body{
+
+    min-height:100vh;
+
+    color:white;
+
+    overflow-x:hidden;
+
+    background:
+    linear-gradient(
+        -45deg,
+        #160000,
+        #3d0000,
+        #720000,
+        #a30000,
+        #260000
+    );
+
+    background-size:400% 400%;
+
+    animation:redBackground 15s ease infinite;
+
+}
+
+
+/* =====================================================
+   ANIMATED RED BACKGROUND
+===================================================== */
+
+@keyframes redBackground{
+
+    0%{
+        background-position:0% 50%;
+    }
+
+    50%{
+        background-position:100% 50%;
+    }
+
+    100%{
+        background-position:0% 50%;
+    }
+
+}
+
+
+/* =====================================================
+   SPARKLES
+===================================================== */
+
+.sparkles{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    z-index:0;
+
+    opacity:.8;
+
+    background-image:
+
+    radial-gradient(
+        white 1px,
+        transparent 1px
+    ),
+
+    radial-gradient(
+        #ffd6d6 1.5px,
+        transparent 1.5px
+    ),
+
+    radial-gradient(
+        #ff6b6b 2px,
+        transparent 2px
+    );
+
+    background-size:
+    90px 90px,
+    150px 150px,
+    230px 230px;
+
+    animation:
+    sparkleMove 11s linear infinite;
+
+}
+
+@keyframes sparkleMove{
+
+    from{
+        transform:translateY(0);
+    }
+
+    to{
+        transform:translateY(-120px);
+    }
+
+}
+
+
+/* =====================================================
+   NAVBAR
+===================================================== */
+
+.navbar{
+
+    position:sticky;
+
+    top:0;
+
+    width:100%;
+
+    min-height:70px;
+
+    padding:15px 35px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    background:
+    rgba(30,0,0,.78);
+
+    backdrop-filter:blur(18px);
+
+    border-bottom:
+    1px solid rgba(255,255,255,.2);
+
+    box-shadow:
+    0 0 25px rgba(255,50,50,.35);
+
+    z-index:1000;
+
+}
+
+
+.logo{
+
+    color:white;
+
+    text-decoration:none;
+
+    font-size:25px;
+
+    font-weight:bold;
+
+    text-shadow:
+    0 0 10px #ffb3b3,
+    0 0 25px #ff3333;
+
+}
+
+
+.nav-links{
+
+    display:flex;
+
+    gap:25px;
+
+    list-style:none;
+
+}
+
+
+.nav-links a{
+
+    color:white;
+
+    text-decoration:none;
+
+    font-weight:bold;
+
+    transition:.3s;
+
+}
+
+
+.nav-links a:hover{
+
+    color:#ffd6d6;
+
+    text-shadow:
+    0 0 12px #ff4d4d;
+
+}
+
+
+.menu-button{
+
+    display:none;
+
+    background:none;
+
+    border:none;
+
+    color:white;
+
+    font-size:28px;
+
+    cursor:pointer;
+
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+header{
+
+    position:relative;
+
+    z-index:1;
+
+    text-align:center;
+
+    padding:
+    85px 20px 50px;
+
+}
+
+
+header h1{
+
+    font-size:80px;
+
+    letter-spacing:5px;
+
+    animation:
+    titleGlow 3s ease-in-out infinite;
+
+}
+
+
+@keyframes titleGlow{
+
+    0%,100%{
+
+        text-shadow:
+        0 0 10px white,
+        0 0 25px #ff9999,
+        0 0 50px #ff1a1a;
+
+    }
+
+    50%{
+
+        text-shadow:
+        0 0 20px white,
+        0 0 40px #ffb3b3,
+        0 0 80px #ff0000;
+
+    }
+
+}
+
+
+header h2{
+
+    margin-top:15px;
+
+    font-size:30px;
+
+    color:#ffe1e1;
+
+    text-shadow:
+    0 0 15px #ff4d4d;
+
+}
+
+
+header p{
+
+    max-width:850px;
+
+    margin:
+    25px auto 0;
+
+    font-size:19px;
+
+    line-height:1.9;
+
+}
+
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+.button-container{
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:15px;
+
+    margin-top:30px;
+
+}
+
+
+.button{
+
+    display:inline-block;
+
+    padding:
+    14px 28px;
+
+    border-radius:50px;
+
+    background:#ffe5e5;
+
+    color:#7f0000;
+
+    font-weight:bold;
+
+    text-decoration:none;
+
+    border:none;
+
+    cursor:pointer;
+
+    transition:.4s;
+
+    box-shadow:
+    0 0 15px rgba(255,255,255,.4);
+
+}
+
+
+.button:hover{
+
+    transform:
+    translateY(-5px)
+    scale(1.05);
+
+    background:white;
+
+    box-shadow:
+    0 0 30px white;
+
+}
+
+
+.red-button{
+
+    background:#ff3333;
+
+    color:white;
+
+}
+
+
+.red-button:hover{
+
+    background:#ff6666;
+
+    color:#450000;
+
+}
+
+
+/* =====================================================
+   HERO BANNER
+===================================================== */
+
+.hero{
+
+    position:relative;
+
+    z-index:1;
+
+    width:90%;
+
+    max-width:1100px;
+
+    margin:
+    20px auto 65px;
+
+    border-radius:30px;
+
+    overflow:hidden;
+
+    border:
+    1px solid rgba(255,255,255,.3);
+
+    box-shadow:
+    0 0 25px #ff3333,
+    0 0 70px rgba(255,0,0,.5);
+
+    animation:
+    heroFloat 5s ease-in-out infinite;
+
+}
+
+
+@keyframes heroFloat{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-12px);
+    }
+
+}
+
+
+.hero img{
+
+    width:100%;
+
+    display:block;
+
+    transition:.7s;
+
+}
+
+
+.hero:hover img{
+
+    transform:scale(1.05);
+
+}
+
+
+/* =====================================================
+   SECTIONS
+===================================================== */
+
+.section{
+
+    position:relative;
+
+    z-index:1;
+
+    width:90%;
+
+    max-width:1100px;
+
+    margin:
+    45px auto;
+
+    padding:40px;
+
+    border-radius:28px;
+
+    background:
+    rgba(255,255,255,.09);
+
+    border:
+    1px solid rgba(255,255,255,.18);
+
+    backdrop-filter:blur(16px);
+
+    box-shadow:
+    0 0 25px rgba(255,70,70,.2);
+
+    transition:.5s;
+
+}
+
+
+.section:hover{
+
+    transform:translateY(-7px);
+
+    box-shadow:
+    0 0 40px rgba(255,80,80,.45);
+
+}
+
+
+.section h2{
+
+    margin-bottom:22px;
+
+    font-size:38px;
+
+    color:#fff1f1;
+
+    text-shadow:
+    0 0 15px #ff4d4d;
+
+}
+
+
+.section p{
+
+    font-size:18px;
+
+    line-height:1.9;
+
+}
+
+
+/* =====================================================
+   INFO CARDS
+===================================================== */
+
+.info-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:20px;
+
+    margin-top:25px;
+
+}
+
+
+.info-card{
+
+    padding:25px;
+
+    text-align:center;
+
+    border-radius:20px;
+
+    background:
+    rgba(255,255,255,.08);
+
+    border:
+    1px solid rgba(255,255,255,.12);
+
+    transition:.4s;
+
+}
+
+
+.info-card:hover{
+
+    transform:
+    translateY(-8px)
+    scale(1.03);
+
+    box-shadow:
+    0 0 25px rgba(255,80,80,.4);
+
+}
+
+
+.info-card h3{
+
+    font-size:24px;
+
+    color:#ffd1d1;
+
+    margin-bottom:10px;
+
+}
+
+
+.info-card p{
+
+    font-size:16px;
+
+}
+
+
+/* =====================================================
+   SOLO CAREER
+===================================================== */
+
+.solo-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(2,1fr);
+
+    gap:25px;
+
+    margin-top:25px;
+
+}
+
+
+.solo-card{
+
+    padding:28px;
+
+    border-radius:22px;
+
+    background:
+    rgba(255,255,255,.08);
+
+    border-left:
+    4px solid #ff4d4d;
+
+    transition:.4s;
+
+}
+
+
+.solo-card:hover{
+
+    transform:translateX(8px);
+
+    box-shadow:
+    0 0 25px rgba(255,50,50,.35);
+
+}
+
+
+.solo-card h3{
+
+    color:#ffd1d1;
+
+    font-size:24px;
+
+    margin-bottom:10px;
+
+}
+
+
+.solo-card p{
+
+    font-size:17px;
+
+}
+
+
+/* =====================================================
+   ACHIEVEMENTS
+===================================================== */
+
+.achievement-list{
+
+    list-style:none;
+
+    display:grid;
+
+    gap:15px;
+
+    margin-top:20px;
+
+}
+
+
+.achievement-list li{
+
+    padding:18px 20px;
+
+    border-radius:15px;
+
+    background:
+    rgba(255,255,255,.08);
+
+    border-left:
+    4px solid #ff4d4d;
+
+    transition:.4s;
+
+}
+
+
+.achievement-list li:hover{
+
+    transform:translateX(8px);
+
+    background:
+    rgba(255,255,255,.14);
+
+    box-shadow:
+    0 0 20px rgba(255,60,60,.3);
+
+}
+
+
+/* =====================================================
+   GALLERY
+===================================================== */
+
+.gallery{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:20px;
+
+    margin-top:30px;
+
+}
+
+
+.gallery img{
+
+    width:100%;
+
+    height:320px;
+
+    object-fit:cover;
+
+    border-radius:20px;
+
+    cursor:pointer;
+
+    transition:.5s;
+
+    box-shadow:
+    0 0 15px rgba(255,255,255,.2);
+
+}
+
+
+.gallery img:hover{
+
+    transform:
+    scale(1.05)
+    rotate(1deg);
+
+    box-shadow:
+    0 0 35px #ff4d4d;
+
+}
+
+
+/* =====================================================
+   LIGHTBOX
+===================================================== */
+
+.lightbox{
+
+    position:fixed;
+
+    inset:0;
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:
+    rgba(10,0,0,.95);
+
+    z-index:5000;
+
+    padding:30px;
+
+}
+
+
+.lightbox.active{
+
+    display:flex;
+
+}
+
+
+.lightbox img{
+
+    max-width:90%;
+
+    max-height:85vh;
+
+    border-radius:20px;
+
+    box-shadow:
+    0 0 50px #ff3333;
+
+}
+
+
+.close-lightbox{
+
+    position:absolute;
+
+    top:20px;
+
+    right:30px;
+
+    font-size:50px;
+
+    cursor:pointer;
+
+    color:white;
+
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer{
+
+    position:relative;
+
+    z-index:1;
+
+    text-align:center;
+
+    margin-top:70px;
+
+    padding:55px 20px;
+
+    background:
+    rgba(0,0,0,.3);
+
+    border-top:
+    1px solid rgba(255,255,255,.15);
+
+}
+
+
+footer h2{
+
+    font-size:35px;
+
+    text-shadow:
+    0 0 20px #ff3333;
+
+}
+
+
+footer p{
+
+    margin-top:15px;
+
+    color:#ffdada;
+
+}
+
+
+.footer-links{
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:20px;
+
+    margin-top:25px;
+
+}
+
+
+.footer-links a{
+
+    color:#ffd6d6;
+
+    text-decoration:none;
+
+    font-weight:bold;
+
+}
+
+
+.footer-links a:hover{
+
+    color:white;
+
+    text-shadow:
+    0 0 10px #ff3333;
+
+}
+
+
+/* =====================================================
+   BACK TO TOP
+===================================================== */
+
+#topButton{
+
+    position:fixed;
+
+    right:25px;
+
+    bottom:25px;
+
+    width:52px;
+
+    height:52px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#ff3333;
+
+    color:white;
+
+    font-size:22px;
+
+    cursor:pointer;
+
+    display:none;
+
+    z-index:3000;
+
+    box-shadow:
+    0 0 25px #ff3333;
+
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width:950px){
+
+    .info-grid{
+
+        grid-template-columns:
+        repeat(2,1fr);
+
+    }
+
+    .gallery{
+
+        grid-template-columns:
+        repeat(2,1fr);
+
+    }
+
+}
+
+
+@media(max-width:750px){
+
+    .nav-links{
+
+        position:absolute;
+
+        top:70px;
+
+        left:0;
+
+        width:100%;
+
+        display:none;
+
+        flex-direction:column;
+
+        text-align:center;
+
+        padding:25px;
+
+        background:
+        rgba(30,0,0,.97);
+
+    }
+
+    .nav-links.active{
+
+        display:flex;
+
+    }
+
+    .menu-button{
+
+        display:block;
+
+    }
+
+    header h1{
+
+        font-size:55px;
+
+    }
+
+    header h2{
+
+        font-size:23px;
+
+    }
+
+    .section{
+
+        width:94%;
+
+        padding:25px;
+
+    }
+
+    .section h2{
+
+        font-size:30px;
+
+    }
+
+    .solo-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+
+@media(max-width:550px){
+
+    .info-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .gallery{
+
+        grid-template-columns:1fr;
+
+    }
+
+    header h1{
+
+        font-size:43px;
+
+    }
+
+    .button{
+
+        width:100%;
+
+        text-align:center;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     SPARKLES
+===================================================== -->
+
+<div class="sparkles"></div>
+
+
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
+
+<nav class="navbar">
+
+
+<a href="index.html"
+   class="logo">
+
+❤️ Glowidolish
+
+</a>
+
+
+<button class="menu-button"
+        id="menuButton">
+
+☰
+
+</button>
+
+
+<ul class="nav-links"
+    id="navLinks">
+
+
+<li>
+<a href="bts.html">
+💜 BTS
+</a>
+</li>
+
+
+<li>
+<a href="#about">
+❤️ About RM
+</a>
+</li>
+
+
+<li>
+<a href="#solo">
+🎵 Solo Career
+</a>
+</li>
+
+
+<li>
+<a href="#achievements">
+🏆 Achievements
+</a>
+</li>
+
+
+<li>
+<a href="#gallery">
+📸 Gallery
+</a>
+</li>
+
+
+</ul>
+
+</nav>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header>
+
+
+<h1>
+❤️ RM
+</h1>
+
+
+<h2>
+Kim Namjoon • Leader • Rapper • Artist
+</h2>
+
+
+<p>
+
+Welcome to RM's corner of Glowidolish.
+
+Explore his journey as the leader of BTS,
+his solo career, artistic achievements,
+music, creativity, and influence.
+
+<br><br>
+
+❤️ Kim Namjoon, the brain behind the brilliance. ❤️
+
+</p>
+
+
+<div class="button-container">
+
+
+<a href="bts.html"
+   class="button">
+
+💜 Back to BTS
+
+</a>
+
+
+<a href="https://www.youtube.com/@BTS"
+   target="_blank"
+   class="button red-button">
+
+🎵 BTS on YouTube
+
+</a>
+
+
+</div>
+
+</header>
+
+
+<!-- =====================================================
+     RM BANNER
+===================================================== -->
+
+<div class="hero">
+
+<img src="rm-banner.jpg"
+     alt="RM">
+
+</div>
+
+
+<!-- =====================================================
+     ABOUT RM
+===================================================== -->
+
+<section class="section"
+         id="about">
+
+
+<h2>
+❤️ About RM
+</h2>
+
+
+<p>
+
+RM, whose real name is <strong>Kim Namjoon</strong>,
+is the leader and one of the rappers of BTS.
+
+He is known for his songwriting, lyricism,
+leadership, public speaking, artistic interests,
+and love of literature and art.
+
+<br><br>
+
+As BTS's leader, RM has played an important role
+in communicating with fans and representing the group
+internationally.
+
+<br><br>
+
+Outside of BTS, he has developed a distinctive
+solo identity focused on introspection, art,
+creativity, and personal expression.
+
+</p>
+
+
+<div class="info-grid">
+
+
+<div class="info-card">
+
+<h3>
+🎤 Role
+</h3>
+
+<p>
+Leader & Rapper of BTS
+</p>
+
+</div>
+
+
+<div class="info-card">
+
+<h3>
+🎨 Known For
+</h3>
+
+<p>
+Lyrics, Art & Leadership
+</p>
+
+</div>
+
+
+<div class="info-card">
+
+<h3>
+🌎 Influence
+</h3>
+
+<p>
+Global K-pop Artist
+</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     SOLO CAREER
+===================================================== -->
+
+<section class="section"
+         id="solo">
+
+
+<h2>
+🎵 RM's Solo Career
+</h2>
+
+
+<div class="solo-grid">
+
+
+<div class="solo-card">
+
+<h3>
+🎧 RM — 2015
+</h3>
+
+<p>
+
+RM released his first solo mixtape,
+<strong>RM</strong>, in 2015.
+
+The project gave listeners a deeper look
+into his personal thoughts, identity,
+and artistic style outside BTS.
+
+</p>
+
+</div>
+
+
+<div class="solo-card">
+
+<h3>
+🎧 mono. — 2018
+</h3>
+
+<p>
+
+His playlist <strong>mono.</strong> explored
+themes of loneliness, reflection, comfort,
+and emotional growth.
+
+It became an important project
+in RM's solo discography.
+
+</p>
+
+</div>
+
+
+<div class="solo-card">
+
+<h3>
+🎨 Indigo — 2022
+</h3>
+
+<p>
+
+<strong>Indigo</strong> was RM's first official
+solo studio album.
+
+The album connected music with art,
+memory, identity, and different stages
+of his life.
+
+</p>
+
+</div>
+
+
+<div class="solo-card">
+
+<h3>
+🌿 Right Place, Wrong Person — 2024
+</h3>
+
+<p>
+
+RM released his second solo studio album,
+<strong>Right Place, Wrong Person</strong>.
+
+The project explored individuality,
+identity, freedom, and the complicated
+feeling of being between different worlds.
+
+</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     MUSIC STYLE
+===================================================== -->
+
+<section class="section">
+
+
+<h2>
+🎼 RM's Artistic Style
+</h2>
+
+
+<p>
+
+RM's music often combines hip-hop with
+alternative, indie, pop, and experimental influences.
+
+His lyrics frequently explore identity,
+self-reflection, uncertainty, relationships,
+art, society, and personal growth.
+
+<br><br>
+
+His solo work also frequently connects
+music with visual art and cultural ideas,
+creating projects that feel more like
+personal journals than simple collections
+of songs.
+
+</p>
+
+</section>
+
+
+<!-- =====================================================
+     ACHIEVEMENTS
+===================================================== -->
+
+<section class="section"
+         id="achievements">
+
+
+<h2>
+🏆 RM's Accomplishments
+</h2>
+
+
+<ul class="achievement-list">
+
+
+<li>
+👑 Leader of BTS since the group's debut.
+</li>
+
+
+<li>
+🎤 One of BTS's main rappers and lyricists.
+</li>
+
+
+<li>
+✍️ Has received songwriting and production credits
+across BTS's discography.
+</li>
+
+
+<li>
+🌎 Represented BTS at major international events
+and global public appearances.
+</li>
+
+
+<li>
+📚 Known for his interest in literature, philosophy,
+art, museums, and contemporary culture.
+</li>
+
+
+<li>
+🎨 His solo projects have received international
+critical attention.
+</li>
+
+
+<li>
+🎵 Released multiple successful solo projects
+including RM, mono., Indigo, and
+Right Place, Wrong Person.
+</li>
+
+
+<li>
+🌟 Became recognized internationally as both
+a K-pop artist and solo musician.
+</li>
+
+
+<li>
+🎤 Has participated in songwriting and creative
+development for BTS and his solo work.
+</li>
+
+
+</ul>
+
+</section>
+
+
+<!-- =====================================================
+     RM TIMELINE
+===================================================== -->
+
+<section class="section">
+
+
+<h2>
+🕰️ RM's Journey
+</h2>
+
+
+<div class="solo-grid">
+
+
+<div class="solo-card">
+
+<h3>
+2013 💜
+</h3>
+
+<p>
+BTS officially debuts with RM
+as the group's leader.
+</p>
+
+</div>
+
+
+<div class="solo-card">
+
+<h3>
+2015 🎤
+</h3>
+
+<p>
+RM releases his first solo mixtape,
+<strong>RM</strong>.
+</p>
+
+</div>
+
+
+<div class="solo-card">
+
+<h3>
+2018 🌙
+</h3>
+
+<p>
+RM releases <strong>mono.</strong>,
+a deeply reflective solo project.
+</p>
+
+</div>
+
+
+<div class="solo-card">
+
+<h3>
+2022 🎨
+</h3>
+
+<p>
+RM releases <strong>Indigo</strong>,
+his first official solo studio album.
+</p>
+
+</div>
+
+
+<div class="solo-card">
+
+<h3>
+2024 🌿
+</h3>
+
+<p>
+RM releases his second solo studio album,
+<strong>Right Place, Wrong Person</strong>.
+</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     GALLERY
+===================================================== -->
+
+<section class="section"
+         id="gallery">
+
+
+<h2>
+📸 RM Gallery
+</h2>
+
+
+<p>
+Click an image to open it in fullscreen.
+</p>
+
+
+<div class="gallery">
+
+
+<img src="rm.jpg"
+     alt="RM"
+     class="gallery-image">
+
+
+<img src="rm1.jpg"
+     alt="RM"
+     class="gallery-image">
+
+
+<img src="rm2.jpg"
+     alt="RM"
+     class="gallery-image">
+
+
+<img src="rm3.jpg"
+     alt="RM"
+     class="gallery-image">
+
+
+<img src="rm4.jpg"
+     alt="RM"
+     class="gallery-image">
+
+
+<img src="rm-banner.jpg"
+     alt="RM"
+     class="gallery-image">
+
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     QUICK LINKS
+===================================================== -->
+
+<section class="section">
+
+
+<h2>
+🔗 Explore More
+</h2>
+
+
+<div class="button-container">
+
+
+<a href="bts.html"
+   class="button">
+
+💜 BTS
+
+</a>
+
+
+<a href="jin.html"
+   class="button">
+
+❤️ Jin
+
+</a>
+
+
+<a href="suga.html"
+   class="button">
+
+❤️ SUGA
+
+</a>
+
+
+<a href="jhope.html"
+   class="button">
+
+❤️ j-hope
+
+</a>
+
+
+<a href="jimin.html"
+   class="button">
+
+❤️ Jimin
+
+</a>
+
+
+<a href="v.html"
+   class="button">
+
+❤️ V
+
+</a>
+
+
+<a href="jungkook.html"
+   class="button">
+
+❤️ Jung Kook
+
+</a>
+
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+
+<h2>
+❤️ Thanks for Visiting RM's Page ❤️
+</h2>
+
+
+<p>
+Made with love for ARMY • Glowidolish ✨
+</p>
+
+
+<div class="footer-links">
+
+
+<a href="index.html">
+🏠 Glowidolish
+</a>
+
+
+<a href="bts.html">
+💜 BTS
+</a>
+
+
+<a href="#about">
+❤️ RM
+</a>
+
+
+<a href="#solo">
+🎵 Solo Career
+</a>
+
+
+<a href="#gallery">
+📸 Gallery
+</a>
+
+
+</div>
+
+
+<p style="margin-top:25px;">
+© 2026 Glowidolish
+</p>
+
+
+</footer>
+
+
+<!-- =====================================================
+     LIGHTBOX
+===================================================== -->
+
+<div class="lightbox"
+     id="lightbox">
+
+
+<span class="close-lightbox"
+      id="closeLightbox">
+
+&times;
+
+</span>
+
+
+<img id="lightboxImage"
+     src=""
+     alt="RM">
+
+</div>
+
+
+<!-- =====================================================
+     BACK TO TOP
+===================================================== -->
+
+<button id="topButton">
+↑
+</button>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+
+/* MOBILE MENU */
+
+const menuButton =
+document.getElementById("menuButton");
+
+const navLinks =
+document.getElementById("navLinks");
+
+
+menuButton.addEventListener(
+"click",
+function(){
+
+    navLinks.classList.toggle("active");
+
+});
+
+
+document
+.querySelectorAll(".nav-links a")
+.forEach(function(link){
+
+    link.addEventListener(
+    "click",
+    function(){
+
+        navLinks.classList.remove("active");
+
+    });
+
+});
+
+
+/* LIGHTBOX */
+
+const galleryImages =
+document.querySelectorAll(".gallery-image");
+
+const lightbox =
+document.getElementById("lightbox");
+
+const lightboxImage =
+document.getElementById("lightboxImage");
+
+const closeLightbox =
+document.getElementById("closeLightbox");
+
+
+galleryImages.forEach(
+function(image){
+
+    image.addEventListener(
+    "click",
+    function(){
+
+        lightboxImage.src =
+        image.src;
+
+        lightboxImage.alt =
+        image.alt;
+
+        lightbox.classList.add(
+        "active"
+        );
+
+    });
+
+});
+
+
+closeLightbox.addEventListener(
+"click",
+function(){
+
+    lightbox.classList.remove(
+    "active"
+    );
+
+});
+
+
+lightbox.addEventListener(
+"click",
+function(event){
+
+    if(event.target === lightbox){
+
+        lightbox.classList.remove(
+        "active"
+        );
+
+    }
+
+});
+
+
+document.addEventListener(
+"keydown",
+function(event){
+
+    if(event.key === "Escape"){
+
+        lightbox.classList.remove(
+        "active"
+        );
+
+    }
+
+});
+
+
+/* BACK TO TOP */
+
+const topButton =
+document.getElementById("topButton");
+
+
+window.addEventListener(
+"scroll",
+function(){
+
+    if(window.scrollY > 500){
+
+        topButton.style.display =
+        "block";
+
+    }
+
+    else{
+
+        topButton.style.display =
+        "none";
+
+    }
+
+});
+
+
+topButton.addEventListener(
+"click",
+function(){
+
+    window.scrollTo({
+
+        top:0,
+
+        behavior:"smooth"
+
+    });
+
+});
+
+
+</script>
+
+
+</body>
+
+</html>
+```
