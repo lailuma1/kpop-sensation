@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>BLACKPINK Quiz | GlowIdolish</title>
+
+<style>
+
+/* =========================
+   BASIC SETUP
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    min-height: 100vh;
+    color: white;
+    overflow-x: hidden;
+
+    background:
+        radial-gradient(circle at 20% 20%, rgba(255, 20, 147, 0.25), transparent 25%),
+        radial-gradient(circle at 80% 70%, rgba(255, 105, 180, 0.18), transparent 25%),
+        linear-gradient(135deg, #050005, #14000f, #050005);
+
+    position: relative;
+}
+
+
+/* =========================
+   SPARKLES
+========================= */
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+
+    background-image:
+        radial-gradient(circle, white 1px, transparent 1px),
+        radial-gradient(circle, #ff69b4 1px, transparent 1px);
+
+    background-size: 90px 90px, 130px 130px;
+    background-position: 10px 20px, 50px 80px;
+
+    opacity: 0.25;
+    pointer-events: none;
+    z-index: 0;
+}
+
+
+/* =========================
+   RANDOM BACKGROUND IMAGES
+========================= */
+
+.bg-image {
+    position: fixed;
+    object-fit: cover;
+    border-radius: 20px;
+
+    opacity: 0.35;
+
+    filter:
+        grayscale(20%)
+        brightness(0.65)
+        contrast(1.1);
+
+    box-shadow:
+        0 0 25px rgba(255, 20, 147, 0.35);
+
+    z-index: 0;
+    pointer-events: none;
+
+    transition: 0.4s ease;
+}
+
+.bg-image:hover {
+    opacity: 0.55;
+}
+
+
+/* Change these image filenames */
+
+.image1 {
+    width: 180px;
+    height: 240px;
+    top: 120px;
+    left: 25px;
+    transform: rotate(-8deg);
+}
+
+.image2 {
+    width: 160px;
+    height: 210px;
+    top: 45%;
+    right: 25px;
+    transform: rotate(9deg);
+}
+
+.image3 {
+    width: 170px;
+    height: 220px;
+    bottom: 30px;
+    left: 70px;
+    transform: rotate(6deg);
+}
+
+.image4 {
+    width: 150px;
+    height: 200px;
+    top: 100px;
+    right: 80px;
+    transform: rotate(-7deg);
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    position: relative;
+    z-index: 5;
+
+    width: 100%;
+    padding: 20px 7%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(12px);
+
+    border-bottom: 1px solid rgba(255, 105, 180, 0.25);
+}
+
+.logo {
+    font-family: Georgia, serif;
+    font-size: 28px;
+    font-weight: bold;
+
+    color: white;
+    letter-spacing: 2px;
+
+    text-shadow:
+        0 0 8px #ff69b4,
+        0 0 20px #ff1493;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+
+    margin-left: 25px;
+    font-size: 14px;
+
+    transition: 0.3s;
+}
+
+.navbar a:hover {
+    color: #ff69b4;
+    text-shadow: 0 0 10px #ff1493;
+}
+
+
+/* =========================
+   MAIN CONTENT
+========================= */
+
+.main {
+    position: relative;
+    z-index: 2;
+
+    max-width: 950px;
+    margin: auto;
+
+    padding: 70px 20px 100px;
+}
+
+
+/* =========================
+   TITLE
+========================= */
+
+.title-section {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.small-title {
+    color: #ff69b4;
+    font-size: 15px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+
+    margin-bottom: 12px;
+}
+
+h1 {
+    font-family: Georgia, serif;
+
+    font-size: clamp(45px, 8vw, 80px);
+
+    letter-spacing: 3px;
+
+    background: linear-gradient(
+        90deg,
+        white,
+        #ffb6d9,
+        #ff1493,
+        white
+    );
+
+    background-size: 250% auto;
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    color: transparent;
+
+    animation: shine 4s linear infinite;
+
+    text-shadow: 0 0 30px rgba(255, 20, 147, 0.2);
+}
+
+@keyframes shine {
+    to {
+        background-position: 250% center;
+    }
+}
+
+.subtitle {
+    margin-top: 12px;
+
+    font-size: 18px;
+    color: #ddd;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================
+   QUIZ BOX
+========================= */
+
+.quiz-container {
+    background: rgba(10, 0, 8, 0.82);
+
+    border: 1px solid rgba(255, 105, 180, 0.45);
+
+    border-radius: 30px;
+
+    padding: 40px;
+
+    box-shadow:
+        0 0 30px rgba(255, 20, 147, 0.15),
+        inset 0 0 30px rgba(255, 20, 147, 0.04);
+
+    backdrop-filter: blur(15px);
+}
+
+
+/* =========================
+   PROGRESS
+========================= */
+
+.progress-area {
+    margin-bottom: 30px;
+}
+
+.progress-text {
+    display: flex;
+    justify-content: space-between;
+
+    font-size: 13px;
+    color: #ffb6d9;
+
+    margin-bottom: 10px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 6px;
+
+    background: #2a1021;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+}
+
+.progress-fill {
+    width: 10%;
+    height: 100%;
+
+    background: linear-gradient(
+        90deg,
+        #ff1493,
+        #ff69b4,
+        #fff
+    );
+
+    box-shadow: 0 0 12px #ff1493;
+
+    transition: width 0.4s ease;
+}
+
+
+/* =========================
+   QUESTION
+========================= */
+
+.question {
+    font-size: 26px;
+    line-height: 1.4;
+
+    margin-bottom: 28px;
+
+    color: white;
+}
+
+
+/* =========================
+   ANSWERS
+========================= */
+
+.answers {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 15px;
+}
+
+.answer {
+    padding: 18px 20px;
+
+    border-radius: 15px;
+
+    border: 1px solid rgba(255, 105, 180, 0.3);
+
+    background: rgba(255, 255, 255, 0.04);
+
+    color: white;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    text-align: left;
+
+    transition: 0.25s ease;
+}
+
+.answer:hover {
+    transform: translateY(-4px);
+
+    background: rgba(255, 20, 147, 0.15);
+
+    border-color: #ff69b4;
+
+    box-shadow:
+        0 0 15px rgba(255, 20, 147, 0.25);
+}
+
+.answer.correct {
+    background: rgba(40, 200, 100, 0.2);
+    border-color: #6cff9b;
+}
+
+.answer.wrong {
+    background: rgba(255, 50, 80, 0.2);
+    border-color: #ff5470;
+}
+
+.answer:disabled {
+    cursor: default;
+}
+
+
+/* =========================
+   NEXT BUTTON
+========================= */
+
+.next-btn {
+    display: block;
+
+    margin: 30px auto 0;
+
+    padding: 14px 35px;
+
+    border: none;
+    border-radius: 50px;
+
+    background: linear-gradient(
+        90deg,
+        #ff1493,
+        #ff69b4
+    );
+
+    color: white;
+
+    font-weight: bold;
+    font-size: 15px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 0 20px rgba(255, 20, 147, 0.4);
+
+    transition: 0.3s;
+}
+
+.next-btn:hover {
+    transform: scale(1.06);
+
+    box-shadow:
+        0 0 30px rgba(255, 20, 147, 0.7);
+}
+
+
+/* =========================
+   RESULT SCREEN
+========================= */
+
+.result {
+    display: none;
+
+    text-align: center;
+
+    padding: 30px 10px;
+}
+
+.result h2 {
+    font-family: Georgia, serif;
+
+    font-size: 50px;
+
+    color: #ff69b4;
+
+    text-shadow:
+        0 0 15px #ff1493;
+}
+
+.score {
+    font-size: 28px;
+
+    margin: 20px 0;
+
+    color: white;
+}
+
+.result-message {
+    font-size: 17px;
+    color: #ddd;
+
+    max-width: 600px;
+    margin: auto;
+
+    line-height: 1.7;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+    text-align: center;
+
+    margin-top: 45px;
+
+    color: #777;
+
+    font-size: 13px;
+}
+
+.footer span {
+    color: #ff69b4;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 700px) {
+
+    .navbar {
+        padding: 18px 5%;
+    }
+
+    .navbar a {
+        margin-left: 10px;
+        font-size: 12px;
+    }
+
+    .main {
+        padding-top: 45px;
+    }
+
+    .quiz-container {
+        padding: 25px 18px;
+    }
+
+    .answers {
+        grid-template-columns: 1fr;
+    }
+
+    .bg-image {
+        opacity: 0.18;
+    }
+
+    .image1 {
+        left: -40px;
+    }
+
+    .image2 {
+        right: -40px;
+    }
+
+    .image3,
+    .image4 {
+        display: none;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =================================
+     RANDOM BACKGROUND IMAGES
+     CHANGE FILENAMES HERE
+================================= -->
+
+<img src="assets/blackpink1.jpg"
+     class="bg-image image1"
+     alt="BLACKPINK background">
+
+<img src="assets/blackpink2.jpg"
+     class="bg-image image2"
+     alt="BLACKPINK background">
+
+<img src="assets/blackpink3.jpg"
+     class="bg-image image3"
+     alt="BLACKPINK background">
+
+<img src="assets/blackpink4.jpg"
+     class="bg-image image4"
+     alt="BLACKPINK background">
+
+
+<!-- =================================
+     NAVIGATION
+================================= -->
+
+<nav class="navbar">
+
+    <div class="logo">
+        GLOWIDOLISH
+    </div>
+
+    <div>
+        <a href="blackpink.html">BLACKPINK</a>
+        <a href="index.html">HOME</a>
+    </div>
+
+</nav>
+
+
+<!-- =================================
+     MAIN
+================================= -->
+
+<main class="main">
+
+
+    <!-- TITLE -->
+
+    <section class="title-section">
+
+        <div class="small-title">
+            BLACKPINK SPECIAL
+        </div>
+
+        <h1>
+            Are U A Real BLINK?
+        </h1>
+
+        <p class="subtitle">
+            💗 Test your BLACKPINK knowledge 🖤
+        </p>
+
+    </section>
+
+
+    <!-- QUIZ -->
+
+    <section class="quiz-container">
+
+
+        <!-- PROGRESS -->
+
+        <div class="progress-area">
+
+            <div class="progress-text">
+
+                <span id="questionNumber">
+                    Question 1 of 10
+                </span>
+
+                <span id="scoreText">
+                    Score: 0
+                </span>
+
+            </div>
+
+            <div class="progress-bar">
+
+                <div
+                    class="progress-fill"
+                    id="progressFill">
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- QUESTION -->
+
+        <div id="quizArea">
+
+            <h2
+                class="question"
+                id="question">
+            </h2>
+
+
+            <div
+                class="answers"
+                id="answers">
+            </div>
+
+
+            <button
+                class="next-btn"
+                id="nextButton"
+                onclick="nextQuestion()"
+                style="display:none;">
+
+                NEXT ✦
+
+            </button>
+
+        </div>
+
+
+        <!-- RESULT -->
+
+        <div
+            class="result"
+            id="result">
+
+            <h2>
+                BLINK CHECK ✨
+            </h2>
+
+            <div
+                class="score"
+                id="finalScore">
+            </div>
+
+            <p
+                class="result-message"
+                id="resultMessage">
+            </p>
+
+            <button
+                class="next-btn"
+                onclick="restartQuiz()">
+
+                TRY AGAIN ♡
+
+            </button>
+
+        </div>
+
+
+    </section>
+
+
+    <div class="footer">
+
+        Made with 🖤💗 by
+        <span>GlowIdolish</span>
+
+    </div>
+
+
+</main>
+
+
+<script>
+
+/* =========================================
+   QUIZ QUESTIONS
+========================================= */
+
+const questions = [
+
+    {
+        question: "What year did BLACKPINK officially debut?",
+        answers: [
+            "2015",
+            "2016",
+            "2017",
+            "2018"
+        ],
+        correct: 1
+    },
+
+    {
+        question: "Which BLACKPINK member was the first to release a solo album?",
+        answers: [
+            "Jisoo",
+            "Jennie",
+            "Rosé",
+            "Lisa"
+        ],
+        correct: 1
+    },
+
+    {
+        question: "What is BLACKPINK's official fandom name?",
+        answers: [
+            "BLINK",
+            "PINKS",
+            "BLACKS",
+            "BP LOVERS"
+        ],
+        correct: 0
+    },
+
+    {
+        question: "Which member's solo debut included the song 'LALISA'?",
+        answers: [
+            "Jennie",
+            "Rosé",
+            "Lisa",
+            "Jisoo"
+        ],
+        correct: 2
+    },
+
+    {
+        question: "Which BLACKPINK member released the solo song 'On The Ground'?",
+        answers: [
+            "Lisa",
+            "Jisoo",
+            "Jennie",
+            "Rosé"
+        ],
+        correct: 3
+    },
+
+    {
+        question: "Which member released the solo song '꽃 (FLOWER)'?",
+        answers: [
+            "Jisoo",
+            "Lisa",
+            "Rosé",
+            "Jennie"
+        ],
+        correct: 0
+    },
+
+    {
+        question: "Which BLACKPINK member is the group's main rapper?",
+        answers: [
+            "Rosé",
+            "Jennie",
+            "Jisoo",
+            "Lisa"
+        ],
+        correct: 1
+    },
+
+    {
+        question: "Which BLACKPINK song features the famous phrase 'BLACKPINK IN YOUR AREA'?",
+        answers: [
+            "DDU-DU DDU-DU",
+            "BOOMBAYAH",
+            "Whistle",
+            "Many BLACKPINK songs"
+        ],
+        correct: 3
+    },
+
+    {
+        question: "Which BLACKPINK member is known for the solo song 'SOLO'?",
+        answers: [
+            "Jisoo",
+            "Jennie",
+            "Lisa",
+            "Rosé"
+        ],
+        correct: 1
+    },
+
+    {
+        question: "How many members are in BLACKPINK?",
+        answers: [
+            "3",
+            "4",
+            "5",
+            "6"
+        ],
+        correct: 1
+    }
+
+];
+
+
+/* =========================================
+   VARIABLES
+========================================= */
+
+let currentQuestion = 0;
+
+let score = 0;
+
+let answered = false;
+
+
+/* =========================================
+   HTML ELEMENTS
+========================================= */
+
+const questionElement =
+    document.getElementById("question");
+
+const answersElement =
+    document.getElementById("answers");
+
+const nextButton =
+    document.getElementById("nextButton");
+
+const questionNumber =
+    document.getElementById("questionNumber");
+
+const scoreText =
+    document.getElementById("scoreText");
+
+const progressFill =
+    document.getElementById("progressFill");
+
+const quizArea =
+    document.getElementById("quizArea");
+
+const result =
+    document.getElementById("result");
+
+const finalScore =
+    document.getElementById("finalScore");
+
+const resultMessage =
+    document.getElementById("resultMessage");
+
+
+/* =========================================
+   LOAD QUESTION
+========================================= */
+
+function loadQuestion() {
+
+    answered = false;
+
+    nextButton.style.display = "none";
+
+    const current = questions[currentQuestion];
+
+    questionElement.textContent =
+        current.question;
+
+    questionNumber.textContent =
+        `Question ${currentQuestion + 1} of ${questions.length}`;
+
+    scoreText.textContent =
+        `Score: ${score}`;
+
+    progressFill.style.width =
+        `${((currentQuestion + 1) / questions.length) * 100}%`;
+
+    answersElement.innerHTML = "";
+
+
+    current.answers.forEach((answer, index) => {
+
+        const button =
+            document.createElement("button");
+
+        button.className = "answer";
+
+        button.textContent = answer;
+
+        button.onclick = () =>
+            selectAnswer(index, button);
+
+        answersElement.appendChild(button);
+
+    });
+
+}
+
+
+/* =========================================
+   CHECK ANSWER
+========================================= */
+
+function selectAnswer(index, button) {
+
+    if (answered) return;
+
+    answered = true;
+
+    const current =
+        questions[currentQuestion];
+
+    const allButtons =
+        document.querySelectorAll(".answer");
+
+
+    allButtons.forEach(btn => {
+        btn.disabled = true;
+    });
+
+
+    if (index === current.correct) {
+
+        button.classList.add("correct");
+
+        score++;
+
+        scoreText.textContent =
+            `Score: ${score}`;
+
+    } else {
+
+        button.classList.add("wrong");
+
+        allButtons[current.correct]
+            .classList.add("correct");
+
+    }
+
+
+    nextButton.style.display = "block";
+
+}
+
+
+/* =========================================
+   NEXT QUESTION
+========================================= */
+
+function nextQuestion() {
+
+    currentQuestion++;
+
+    if (currentQuestion < questions.length) {
+
+        loadQuestion();
+
+    } else {
+
+        showResult();
+
+    }
+
+}
+
+
+/* =========================================
+   RESULT
+========================================= */
+
+function showResult() {
+
+    quizArea.style.display = "none";
+
+    result.style.display = "block";
+
+    progressFill.style.width = "100%";
+
+    finalScore.textContent =
+        `${score} / ${questions.length}`;
+
+
+    if (score === 10) {
+
+        resultMessage.textContent =
+            "YOU ARE A TRUE BLINK. 🖤💗 You didn't come here to play. You came here to destroy the quiz.";
+
+    }
+
+    else if (score >= 8) {
+
+        resultMessage.textContent =
+            "Certified BLINK energy detected. 🖤💗 Your BLACKPINK knowledge is seriously impressive.";
+
+    }
+
+    else if (score >= 5) {
+
+        resultMessage.textContent =
+            "You're getting there! You definitely know BLACKPINK, but there are a few more BLINK facts to unlock.";
+
+    }
+
+    else {
+
+        resultMessage.textContent =
+            "The BLINK exam has humbled you. 😭 Time for a BLACKPINK knowledge comeback.";
+
+    }
+
+}
+
+
+/* =========================================
+   RESTART
+========================================= */
+
+function restartQuiz() {
+
+    currentQuestion = 0;
+
+    score = 0;
+
+    result.style.display = "none";
+
+    quizArea.style.display = "block";
+
+    loadQuestion();
+
+}
+
+
+/* =========================================
+   START QUIZ
+========================================= */
+
+loadQuestion();
+
+</script>
+
+</body>
+</html>
